@@ -1,3 +1,4 @@
+import ContactFAQ from "../components/ContactFAQ";
 import Services from "../components/services";
 
 const Home = () => {
@@ -5,35 +6,25 @@ const Home = () => {
     <div className="m-0 p-0">
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* BACKGROUND */}
         <div className="absolute inset-0 -z-10">
-          {/* Desktop */}
           <div
             className="hidden md:block w-full h-full bg-cover bg-center"
             style={{ backgroundImage: "url('/hero.png')" }}
           />
-
-          {/* Mobile */}
           <div
             className="md:hidden w-full h-full bg-cover bg-center"
             style={{ backgroundImage: "url('/mobile.heroo.jpg')" }}
           />
         </div>
-
-        {/* CONTENT */}
         <div className="w-full bg-black/10 min-h-screen flex items-center">
           <div className="max-w-3xl px-6 md:px-10 text-left">
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white md:text-[#0A2540] leading-tight">
-              Premium Security Solutions You Can{" "}
-              <br className="hidden md:block" />
-              Trust Across Alberta.
+              Premium Security Solutions You Can Trust Across Alberta.
             </h1>
-
             <p className="mt-5 text-base md:text-xl text-white/90 md:text-[#0A2540]/80">
               Licensed, professional, and reliable security services tailored to
               protect your assets and peace of mind.
             </p>
-
             <div className="mt-7">
               <a
                 href="/contact"
@@ -46,100 +37,109 @@ const Home = () => {
         </div>
       </section>
 
-      {/* NEXT SECTION */}
-      <section className="w-full bg-white pt-4 pb-10">
-        <img
-          src="/WES.png"
-          alt="WES"
-          className="w-full h-auto md:h-[290px] md:object-cover object-contain block"
-        />
+      {/* ABOUT OUR COMPANY SECTION */}
+      <section className="w-full py-20 px-6 md:px-12 bg-white">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+          <div className="flex-1">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-6">
+              About <span className="text-[#007BFF]">Our Company</span>
+            </h2>
+            <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+              At Western Eagle Security, we provide comprehensive, professional
+              security solutions meticulously tailored to your specific
+              operational needs. Our commitment to safety and service excellence
+              ensures that your assets, premises, and personnel remain fully
+              protected under the watch of highly trained industry experts.
+            </p>
+            <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+              We understand that every business faces unique challenges. By
+              integrating advanced surveillance technology, data-driven risk
+              assessment, and proactive on-site support, we deliver a robust
+              security framework. Our goal is to provide you with absolute peace
+              of mind, allowing you to focus on your core business activities
+              with the confidence that your environment is secure, 24/7.
+            </p>
+            <div className="flex gap-12">
+              <div>
+                <h3 className="text-4xl font-bold text-black">250+</h3>
+                <p className="text-sm mt-2 font-semibold text-gray-500 uppercase">
+                  Project Done
+                </p>
+              </div>
+              <div>
+                <h3 className="text-4xl font-bold text-black">280+</h3>
+                <p className="text-sm mt-2 font-semibold text-gray-500 uppercase">
+                  Happy Client
+                </p>
+              </div>
+              <div>
+                <h3 className="text-4xl font-bold text-black">240+</h3>
+                <p className="text-sm mt-2 font-semibold text-gray-500 uppercase">
+                  Our Employees
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex-1 relative">
+            <div className="absolute -bottom-6 -left-6 w-full h-full bg-[#FBBF24] -z-10"></div>
+            <img
+              src="/About.png"
+              alt="Security"
+              className="w-full h-auto rounded-sm shadow-xl"
+            />
+          </div>
+        </div>
       </section>
+
+      {/* SERVICES SECTION */}
       <Services />
 
-      {/* OUR PROCESS SECTION - Updated Layout */}
+      {/* OUR PROCESS SECTION */}
       <section className="w-full bg-white py-16 px-6 md:px-24">
         <div className="flex flex-col md:flex-row gap-16">
-          {/* Left Side: Text */}
           <div className="flex-1">
             <p className="text-[#6366f1] font-semibold mb-4">Our process</p>
-            <h2 className="text-4xl md:text-4xl font-bold text-[#0A2540] leading-tight mb-6">
-              One smart approach. Four steps. A security solution tailored to
-              your business
+            <h2 className="text-4xl font-bold text-[#0A2540] mb-6">
+              One smart approach. Four steps.
             </h2>
-            <p className="text-gray-800 text-base">
-              Whether you are upgrading your security or starting fresh, Western
-              Eagle Security makes it easy with a customized solution built
-              around your specific needs.
+            <p className="text-gray-600">
+              Tailored solutions for your business security needs.
             </p>
           </div>
-
-          {/* Right Side: Steps with vertical line */}
           <div className="flex-1 border-l-2 border-gray-200 pl-8 space-y-12">
             {[
-              {
-                num: "01",
-                title: "Contact us",
-                desc: "Looking for security service? Simply fill out our contact form and we will get back to you as soon as possible.",
-              },
-              {
-                num: "02",
-                title: "Assessment with a Specialist",
-                desc: "Our security specialist will schedule a meeting for an on-site walkthrough or online consultation.",
-              },
-              {
-                num: "03",
-                title: "Personalized Quote",
-                desc: "Based on our meeting and a risk assessment, we will send you a quote that matches your risk profile and needs.",
-              },
-              {
-                num: "04",
-                title: "Implementation & Ongoing Operation",
-                desc: "After signing the contract, our teams proceed to set up your security solution and ensure a smooth start.",
-              },
-            ].map((item, index) => (
-              <div key={index} className="relative">
+              "Contact us",
+              "Assessment with a Specialist",
+              "Personalized Quote",
+              "Implementation & Operation",
+            ].map((title, i) => (
+              <div key={i} className="relative">
                 <div className="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-white border-2 border-gray-200"></div>
-                <div className="text-[#6366f1] font-bold text-xl mb-2">
-                  {item.num}
-                </div>
-                <h3 className="text-xl font-bold text-[#0A2540] mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                <div className="text-[#6366f1] font-bold text-xl">0{i + 1}</div>
+                <h3 className="text-xl font-bold text-[#0A2540]">{title}</h3>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ...........................img section ............................ */}
+      {/* IMAGE SECTION */}
       <section className="w-full py-16 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Heading */}
           <h2 className="text-3xl md:text-5xl font-bold text-[#0A2540] mb-6">
-            We Make Your
-            <br /> World a Safer Place.
+            We Make Your World a Safer Place.
           </h2>
-
-          {/* Subtext */}
-          <p className="text-gray-600 text-lg md:text-xl mb-12 max-w-3xl mx-auto">
-            Benefit from Western Eagle Security, a trusted Canadian partner that
-            delivers integrated security solutions. We combine advanced
-            technology, rich data, and professional expertise to protect your
-            business assets, so you can focus on your core mission without
-            worry.
+          <p className="text-gray-600 text-lg mb-12">
+            Benefit from Western Eagle Security, a trusted Canadian partner.
           </p>
-
-          {/* Image Section */}
-          <div className="w-full">
-            <img
-              src="/centerimg.png"
-              alt="Western Eagle Security Operations"
-              className="w-full h-auto object-cover rounded-lg shadow-lg"
-            />
-          </div>
+          <img
+            src="/centerimg.png"
+            alt="Operations"
+            className="w-full h-auto rounded-lg shadow-lg"
+          />
         </div>
       </section>
+      <ContactFAQ />
     </div>
   );
 };
