@@ -47,7 +47,7 @@ const Home = () => {
       </section>
 
       {/* NEXT SECTION */}
-      <section className="w-full bg-white pb-10">
+      <section className="w-full bg-white pt-4 pb-10">
         <img
           src="/WES.png"
           alt="WES"
