@@ -111,6 +111,35 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* ...........................img section ............................ */}
+      <section className="w-full py-16 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Heading */}
+          <h2 className="text-3xl md:text-5xl font-bold text-[#0A2540] mb-6">
+            We Make Your
+            <br /> World a Safer Place.
+          </h2>
+
+          {/* Subtext */}
+          <p className="text-gray-600 text-lg md:text-xl mb-12 max-w-3xl mx-auto">
+            Benefit from Western Eagle Security, a trusted Canadian partner that
+            delivers integrated security solutions. We combine advanced
+            technology, rich data, and professional expertise to protect your
+            business assets, so you can focus on your core mission without
+            worry.
+          </p>
+
+          {/* Image Section */}
+          <div className="w-full">
+            <img
+              src="/centerimg.png"
+              alt="Western Eagle Security Operations"
+              className="w-full h-auto object-cover rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
