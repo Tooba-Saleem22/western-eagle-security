@@ -62,19 +62,19 @@ const Home = () => {
             <div className="flex gap-12">
               <div>
                 <h3 className="text-4xl font-bold text-black">250+</h3>
-                <p className="text-sm mt-2 font-semibold text-gray-500 uppercase">
+                <p className="text-sm mt-2 font-semibold text-[#005FCC] uppercase">
                   Project Done
                 </p>
               </div>
               <div>
                 <h3 className="text-4xl font-bold text-black">280+</h3>
-                <p className="text-sm mt-2 font-semibold text-gray-500 uppercase">
+                <p className="text-sm mt-2 font-semibold text-[#005FCC] uppercase">
                   Happy Client
                 </p>
               </div>
               <div>
                 <h3 className="text-4xl font-bold text-black">240+</h3>
-                <p className="text-sm mt-2 font-semibold text-gray-500 uppercase">
+                <p className="text-sm mt-2 font-semibold text-[#005FCC] uppercase">
                   Our Employees
                 </p>
               </div>
