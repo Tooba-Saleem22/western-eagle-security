@@ -119,60 +119,131 @@ const About = () => {
 
       {/* WHY CHOOSE US */}
       <section className="py-24 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-[#007BFF] font-semibold mb-3">Why Choose Us</p>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540]">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-4">
               Trusted Security Professionals
             </h2>
+
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Delivering dependable security services with professionalism,
+              experience, and a commitment to protecting what matters most.
+            </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              "Licensed & Trained Guards",
-              "Fast Response Coverage",
-              "Customized Security Plans",
-              "Professional Reporting",
+              {
+                title: "Licensed & Trained Guards",
+                desc: "Professional security personnel trained to handle a variety of situations.",
+              },
+              {
+                title: "Fast Response Coverage",
+                desc: "Quick action and reliable support whenever security concerns arise.",
+              },
+              {
+                title: "Customized Security Plans",
+                desc: "Tailored solutions designed around your unique property requirements.",
+              },
+              {
+                title: "Professional Reporting",
+                desc: "Detailed incident reporting and clear communication for clients.",
+              },
             ].map((item, index) => (
               <div
                 key={index}
-                className="border p-8 text-center hover:shadow-lg transition"
+                className="bg-white border rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
               >
-                <h3 className="text-xl font-semibold text-[#0A2540]">{item}</h3>
+                <img
+                  src="/About.png"
+                  alt={item.title}
+                  className="w-full h-56 object-cover"
+                />
+
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-[#0A2540] mb-3">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* INDUSTRIES */}
+      {/* INDUSTRIES WE SERVE */}
       <section className="bg-gray-50 py-24 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-[#007BFF] font-semibold mb-3">
-              Industries We Serve
+              Industries We Protect
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540]">
-              Security Solutions For Every Sector
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-4">
+              Security Solutions Tailored To Every Environment
             </h2>
+
+            <p className="max-w-3xl mx-auto text-gray-600 text-lg">
+              From construction sites to corporate offices, we provide
+              customized security services designed to protect people, assets,
+              and operations.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              "Construction Sites",
-              "Commercial Buildings",
-              "Residential Communities",
-              "Warehouses",
-              "Retail Stores",
-              "Corporate Offices",
-            ].map((industry, index) => (
+              {
+                title: "Construction Sites",
+                desc: "Prevent theft, vandalism, and unauthorized access.",
+              },
+              {
+                title: "Commercial Buildings",
+                desc: "Professional security for offices and business facilities.",
+              },
+              {
+                title: "Residential Communities",
+                desc: "Keeping residents and properties safe around the clock.",
+              },
+              {
+                title: "Warehouses",
+                desc: "Protect valuable inventory and operational assets.",
+              },
+              {
+                title: "Retail Stores",
+                desc: "Reduce losses and enhance customer safety.",
+              },
+              {
+                title: "Corporate Offices",
+                desc: "Reliable protection for employees and visitors.",
+              },
+            ].map((item, index) => (
               <div
                 key={index}
-                className="bg-white border p-6 text-center font-semibold text-[#0A2540]"
+                className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
               >
-                {industry}
+                <div className="relative overflow-hidden">
+                  <img
+                    src="/About.png"
+                    alt={item.title}
+                    className="w-full h-64 object-cover group-hover:scale-105 transition duration-500"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                  <h3 className="absolute bottom-4 left-5 text-white text-2xl font-bold">
+                    {item.title}
+                  </h3>
+                </div>
+
+                <div className="p-6">
+                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -181,19 +252,19 @@ const About = () => {
 
       {/* CTA */}
       <section className="py-24 px-6 md:px-12">
-        <div className="max-w-5xl mx-auto bg-[#0A2540] rounded-lg p-12 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
+        <div className="max-w-5xl mx-auto bg-white border-2 border-[#007BFF] rounded-lg p-12 text-center">
+          <h2 className="text-4xl font-bold text-[#0A2540] mb-6">
             Need Professional Security Services?
           </h2>
 
-          <p className="text-gray-300 text-lg mb-8">
+          <p className="text-gray-600 text-lg mb-8">
             Contact our team today and receive a customized security solution
             tailored to your property's needs.
           </p>
 
           <a
             href="/contact"
-            className="inline-block px-8 py-4 bg-[#007BFF] text-white font-semibold hover:bg-[#005FCC] transition"
+            className="inline-block px-8 py-4 bg-[#007BFF] text-white font-semibold rounded-md hover:bg-[#005FCC] transition"
           >
             Request a Free Quote
           </a>
