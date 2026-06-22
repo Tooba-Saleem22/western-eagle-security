@@ -252,22 +252,27 @@ const About = () => {
 
       {/* CTA */}
       <section className="py-24 px-6 md:px-12">
-        <div className="max-w-5xl mx-auto bg-white border-2 border-[#007BFF] rounded-lg p-12 text-center">
-          <h2 className="text-4xl font-bold text-[#0A2540] mb-6">
-            Need Professional Security Services?
-          </h2>
+        <div className="max-w-5xl mx-auto relative">
+          {/* Soft Transparent Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#007BFF]/70 via-[#00A3FF]/60 to-[#005FCC]/70 rounded-2xl"></div>
 
-          <p className="text-gray-600 text-lg mb-8">
-            Contact our team today and receive a customized security solution
-            tailored to your property's needs.
-          </p>
+          <div className="relative p-14 text-center">
+            <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">
+              Need Professional Security Services?
+            </h2>
 
-          <a
-            href="/contact"
-            className="inline-block px-8 py-4 bg-[#007BFF] text-white font-semibold rounded-md hover:bg-[#005FCC] transition"
-          >
-            Request a Free Quote
-          </a>
+            <p className="text-black/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+              Get trained security professionals for your property. Reliable,
+              fast, and trusted protection across Alberta.
+            </p>
+
+            <a
+              href="/contact"
+              className="inline-block px-10 py-4 bg-white text-[#007BFF] font-semibold rounded-full shadow-md hover:scale-105 transition duration-300"
+            >
+              Request a Free Quote
+            </a>
+          </div>
         </div>
       </section>
     </div>
