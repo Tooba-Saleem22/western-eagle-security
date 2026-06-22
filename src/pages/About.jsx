@@ -1,22 +1,34 @@
+import { Target, Eye } from "lucide-react";
+
 const About = () => {
   return (
     <div className="w-full bg-white">
       {/* HERO SECTION */}
-      <section className="relative py-32 px-6 md:px-12 bg-white overflow-hidden">
-        <div className="max-w-6xl mx-auto text-center text-black">
-          <p className="uppercase tracking-widest text-[#007BFF] font-semibold mb-4">
-            About Western Eagle Security
-          </p>
+      <section className="py-24 px-6 md:px-12 bg-white">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="uppercase tracking-widest text-[#007BFF] font-semibold mb-4">
+              About Western Eagle Security
+            </p>
 
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-            Protecting Alberta's Businesses, Properties, and Communities
-          </h1>
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight text-[#0A2540] mb-6">
+              Protecting Alberta's Businesses, Properties, and Communities
+            </h1>
 
-          <p className="max-w-3xl mx-auto text-lg text-gray-800">
-            Western Eagle Security delivers professional, reliable, and
-            customized security services designed to safeguard people,
-            properties, and assets across Alberta.
-          </p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Western Eagle Security delivers professional, reliable, and
+              customized security services designed to safeguard people,
+              properties, and assets across Alberta.
+            </p>
+          </div>
+
+          <div>
+            <img
+              src="/About.png"
+              alt="Western Eagle Security"
+              className="w-full rounded-lg shadow-xl"
+            />
+          </div>
         </div>
       </section>
 
@@ -25,7 +37,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
           <div>
             <img
-              src="/about-company.jpg"
+              src="/About.png"
               alt="Western Eagle Security"
               className="w-full rounded-lg shadow-xl"
             />
@@ -70,7 +82,11 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-10 shadow-sm border">
+            <div className="bg-white p-10 shadow-sm border hover:shadow-lg transition">
+              <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+                <Target size={30} className="text-[#007BFF]" />
+              </div>
+
               <h3 className="text-2xl font-bold text-[#0A2540] mb-4">
                 Our Mission
               </h3>
@@ -82,7 +98,11 @@ const About = () => {
               </p>
             </div>
 
-            <div className="bg-white p-10 shadow-sm border">
+            <div className="bg-white p-10 shadow-sm border hover:shadow-lg transition">
+              <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+                <Eye size={30} className="text-[#007BFF]" />
+              </div>
+
               <h3 className="text-2xl font-bold text-[#0A2540] mb-4">
                 Our Vision
               </h3>
@@ -156,64 +176,6 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CORE VALUES */}
-      <section className="py-24 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-[#007BFF] font-semibold mb-3">Our Core Values</p>
-
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540]">
-              The Principles Behind Our Service
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Integrity",
-                desc: "We act with honesty, professionalism, and transparency.",
-              },
-              {
-                title: "Reliability",
-                desc: "Clients can count on us whenever security matters.",
-              },
-              {
-                title: "Safety",
-                desc: "Protecting people and property is our highest priority.",
-              },
-              {
-                title: "Excellence",
-                desc: "We strive to exceed expectations in every assignment.",
-              },
-            ].map((value, index) => (
-              <div key={index} className="border p-8">
-                <h3 className="text-2xl font-bold text-[#0A2540] mb-3">
-                  {value.title}
-                </h3>
-
-                <p className="text-gray-600">{value.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* STATS */}
-      <section className="bg-[#0A2540] py-20 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-center">
-          {[
-            "24/7 Availability",
-            "Licensed Professionals",
-            "Alberta Wide Coverage",
-            "Rapid Response Support",
-          ].map((item, index) => (
-            <div key={index}>
-              <h3 className="text-2xl font-bold text-white">{item}</h3>
-            </div>
-          ))}
         </div>
       </section>
 
