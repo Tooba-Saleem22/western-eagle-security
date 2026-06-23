@@ -261,7 +261,7 @@ const About = () => {
               Need Professional Security Services?
             </h2>
 
-            <p className="text-black/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+            <p className="text-blacknn/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
               Get trained security professionals for your property. Reliable,
               fast, and trusted protection across Alberta.
             </p>
