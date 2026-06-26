@@ -1,4 +1,31 @@
-import { Target, Eye } from "lucide-react";
+import { Target, Eye, ShieldCheck } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import { Quote } from "lucide-react";
+
+const testimonials = [
+  {
+    name: "Michael R.",
+    text: "Western Eagle Security provided exceptional service for our commercial property. Their guards were professional, punctual, and always alert. Highly recommended.",
+  },
+  {
+    name: "Sarah J.",
+    text: "Their team exceeded our expectations during our construction project. Reliable communication and excellent security coverage throughout.",
+  },
+  {
+    name: "David L.",
+    text: "We've worked with several security companies before, but Western Eagle Security stands out for professionalism and quick response.",
+  },
+  {
+    name: "Emily W.",
+    text: "Outstanding customer service and highly trained guards. We feel much safer knowing they are protecting our facility.",
+  },
+];
 
 const About = () => {
   return (
@@ -68,55 +95,147 @@ const About = () => {
         </div>
       </section>
 
-      {/* MISSION & VISION */}
+      {/* MISSION • VISION • CORE VALUES */}
       <section className="bg-gray-50 py-24 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-[#007BFF] font-semibold mb-3">
-              Mission & Vision
+        <div className="max-w-7xl mx-auto">
+          {/* Heading */}
+          <div className="text-center mb-16">
+            <p className="text-[#007BFF] font-semibold uppercase tracking-wider mb-3">
+              Mission • Vision • Values
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540]">
-              What Drives Us
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-5">
+              What Drives Our Commitment
             </h2>
+
+            <p className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
+              At Western Eagle Security, we are committed to protecting people,
+              businesses, and communities through trusted security services
+              built on professionalism, integrity, and excellence.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-10 shadow-sm border hover:shadow-lg transition">
-              <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
-                <Target size={30} className="text-[#007BFF]" />
+          {/* Cards */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Mission */}
+            <div className="bg-white rounded-xl border p-8 shadow-sm hover:shadow-lg transition duration-300">
+              <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mb-5">
+                <Target size={28} className="text-[#007BFF]" />
               </div>
 
-              <h3 className="text-2xl font-bold text-[#0A2540] mb-4">
+              <h3 className="text-2xl font-bold text-[#0A2540] mb-3">
                 Our Mission
               </h3>
 
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed mb-4">
                 To provide dependable security services that protect people,
-                property, and assets while maintaining the highest standards of
-                professionalism, accountability, and service excellence.
+                properties, and assets while maintaining the highest standards
+                of professionalism and accountability.
               </p>
+
+              <ul className="space-y-2 text-gray-600">
+                <li>
+                  <span className="text-[#007BFF] font-bold mr-2">✓</span>
+                  Reliable Security Solutions
+                </li>
+
+                <li>
+                  <span className="text-[#007BFF] font-bold mr-2">✓</span>
+                  Professional Guard Services
+                </li>
+
+                <li>
+                  <span className="text-[#007BFF] font-bold mr-2">✓</span>
+                  Client-Focused Protection
+                </li>
+
+                <li>
+                  <span className="text-[#007BFF] font-bold mr-2">✓</span>
+                  Rapid Response
+                </li>
+              </ul>
             </div>
 
-            <div className="bg-white p-10 shadow-sm border hover:shadow-lg transition">
-              <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
-                <Eye size={30} className="text-[#007BFF]" />
+            {/* Vision */}
+            <div className="bg-white rounded-xl border p-8 shadow-sm hover:shadow-lg transition duration-300">
+              <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mb-5">
+                <Eye size={28} className="text-[#007BFF]" />
               </div>
 
-              <h3 className="text-2xl font-bold text-[#0A2540] mb-4">
+              <h3 className="text-2xl font-bold text-[#0A2540] mb-3">
                 Our Vision
               </h3>
 
-              <p className="text-gray-600 leading-relaxed">
-                To become Alberta’s most trusted security partner by delivering
-                innovative, reliable, and client-focused security solutions that
-                exceed expectations.
+              <p className="text-gray-600 leading-relaxed mb-4">
+                To become Alberta's most trusted security company by delivering
+                innovative and client-focused security solutions that
+                consistently exceed expectations.
               </p>
+
+              <ul className="space-y-2 text-gray-600">
+                <li>
+                  <span className="text-[#007BFF] font-bold mr-2">✓</span>
+                  Industry Leadership
+                </li>
+
+                <li>
+                  <span className="text-[#007BFF] font-bold mr-2">✓</span>
+                  Continuous Improvement
+                </li>
+
+                <li>
+                  <span className="text-[#007BFF] font-bold mr-2">✓</span>
+                  Long-Term Partnerships
+                </li>
+
+                <li>
+                  <span className="text-[#007BFF] font-bold mr-2">✓</span>
+                  Service Excellence
+                </li>
+              </ul>
+            </div>
+
+            {/* Core Values */}
+            <div className="bg-white rounded-xl border p-8 shadow-sm hover:shadow-lg transition duration-300">
+              <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mb-5">
+                <ShieldCheck size={28} className="text-[#007BFF]" />
+              </div>
+
+              <h3 className="text-2xl font-bold text-[#0A2540] mb-3">
+                Our Core Values
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed mb-4">
+                We believe trust is earned through integrity, professionalism,
+                and a commitment to delivering dependable security services
+                every day.
+              </p>
+
+              <ul className="space-y-2 text-gray-600">
+                <li>
+                  <span className="text-[#007BFF] font-bold mr-2">✓</span>
+                  Integrity
+                </li>
+
+                <li>
+                  <span className="text-[#007BFF] font-bold mr-2">✓</span>
+                  Professionalism
+                </li>
+
+                <li>
+                  <span className="text-[#007BFF] font-bold mr-2">✓</span>
+                  Accountability
+                </li>
+
+                <li>
+                  <span className="text-[#007BFF] font-bold mr-2">✓</span>
+                  Reliability
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
-
       {/* WHY CHOOSE US */}
       <section className="py-24 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
@@ -174,6 +293,49 @@ const About = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="bg-[#4EA5FF] py-9 px-6 md:px-12 overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-black font-semibold mb-3 uppercase tracking-wider">
+              Testimonials
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-black">
+              What Our Clients Say
+            </h2>
+          </div>
+
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
+            loop
+            className="testimonialSwiper"
+          >
+            {testimonials.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div className="relative max-w-4xl mx-auto text-center py-10 px-8">
+                  <p className="text-black text-xl md:text-3xl leading-relaxed font-light">
+                    "{item.text}"
+                  </p>
+
+                  <div className="mt-10">
+                    <h4 className="text-black text-2xl font-semibold">
+                      {item.name}
+                    </h4>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
 
