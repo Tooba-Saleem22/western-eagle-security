@@ -8,7 +8,7 @@ const ConciergeSecurity = () => {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
           {/* Left Content */}
           <div className="lg:col-span-2">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#005FCC] leading-tight mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-[#005FCC] leading-tight mb-8">
               Trustworthy Concierge Security Services in Alberta
             </h1>
 
@@ -50,48 +50,121 @@ const ConciergeSecurity = () => {
         </div>
       </section>
       {/* PROFESSIONAL CONCIERGE SECURITY */}
-      {/* PROFESSIONAL CONCIERGE SECURITY */}
       <section className="py-24 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
-          {/* Left Image */}
-          <div>
-            <img
-              src="/About.png"
-              alt="Concierge Security"
-              className="w-full rounded-xl shadow-lg object-cover"
-            />
+        <div className="max-w-7xl mx-auto">
+          {/* Top Row */}
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            {/* Left Image */}
+            <div>
+              <img
+                src="/About.png"
+                alt="Concierge Security"
+                className="w-full rounded-xl shadow-lg object-cover"
+              />
+            </div>
+
+            {/* Right Content */}
+            <div>
+              <p className="text-[#005FCC] font-semibold uppercase tracking-wider mb-3">
+                Concierge Security
+              </p>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0A2540] leading-tight mb-6">
+                Concierge Security Guards Are Professionally Trained & Vetted
+              </h2>
+
+              <p className="text-gray-700 text-lg leading-8 mb-3">
+                At Western Eagle Security, our concierge officers are carefully
+                selected, professionally trained, and fully licensed to deliver
+                dependable protection with exceptional customer service.
+              </p>
+
+              <p className="text-gray-700 text-lg leading-8 mb-5">
+                From visitor management and access control to emergency
+                response, our team creates a secure and welcoming environment
+                for residents, employees, and guests while maintaining the
+                highest standards of professionalism.
+              </p>
+
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <CheckCircle2
+                    size={20}
+                    className="text-[#005FCC] flex-shrink-0"
+                  />
+                  <span className="text-gray-700">
+                    Licensed & professionally trained guards
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <CheckCircle2
+                    size={20}
+                    className="text-[#005FCC] flex-shrink-0"
+                  />
+                  <span className="text-gray-700">
+                    Background checked & thoroughly vetted
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <CheckCircle2
+                    size={20}
+                    className="text-[#005FCC] flex-shrink-0"
+                  />
+                  <span className="text-gray-700">
+                    Access control & visitor management
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <CheckCircle2
+                    size={20}
+                    className="text-[#005FCC] flex-shrink-0"
+                  />
+                  <span className="text-gray-700">
+                    Continuous supervision & quality assurance
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Right Content */}
-          <div>
+          {/* Bottom Content */}
+          <div className=" border-t border-gray-200 pt-16">
             <p className="text-[#005FCC] font-semibold uppercase tracking-wider mb-3">
-              Concierge Security
+              Tailored Security Solutions
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] leading-tight mb-6">
-              Concierge Security Guards Are Professionally Trained & Vetted
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0A2540] mb-6">
+              Customized Concierge Security <br />
+              Solutions Across Alberta
             </h2>
 
-            <p className="text-gray-700 text-lg leading-8 mb-5">
-              At Western Eagle Security, our concierge officers are carefully
-              selected, professionally trained, and fully licensed to deliver
-              dependable protection with outstanding customer service.
+            <p className="text-gray-700 text-lg leading-8 mb-4">
+              Western Eagle Security delivers customized concierge security
+              solutions for condominiums, residential communities, commercial
+              buildings, office complexes, and mixed-use properties across
+              Alberta. We work closely with property managers and building
+              owners to provide security services tailored to each property's
+              unique requirements.
             </p>
 
-            <p className="text-gray-700 text-lg leading-8 mb-8">
-              From visitor management to access control and emergency response,
-              our team ensures your property remains secure while creating a
-              welcoming environment for residents, employees, and guests.
+            <p className="text-gray-700 text-lg leading-8 mb-6">
+              Our flexible service plans combine professional protection,
+              exceptional customer service, and reliable security coverage,
+              ensuring every client receives a solution that fits both their
+              operational needs and budget.
             </p>
 
-            <div className="space-y-4">
+            <div className="grid md:grid-cols-2 gap-4">
               <div className="flex items-center gap-3">
                 <CheckCircle2
                   size={20}
                   className="text-[#005FCC] flex-shrink-0"
                 />
                 <span className="text-gray-700">
-                  Licensed & trained security professionals
+                  Condominiums & Residential Communities
                 </span>
               </div>
 
@@ -101,7 +174,7 @@ const ConciergeSecurity = () => {
                   className="text-[#005FCC] flex-shrink-0"
                 />
                 <span className="text-gray-700">
-                  Background checked & professionally vetted
+                  High-Rise & Mixed-Use Buildings
                 </span>
               </div>
 
@@ -111,7 +184,7 @@ const ConciergeSecurity = () => {
                   className="text-[#005FCC] flex-shrink-0"
                 />
                 <span className="text-gray-700">
-                  Access control & visitor management
+                  Corporate Offices & Commercial Properties
                 </span>
               </div>
 
@@ -121,7 +194,7 @@ const ConciergeSecurity = () => {
                   className="text-[#005FCC] flex-shrink-0"
                 />
                 <span className="text-gray-700">
-                  Ongoing supervision & quality assurance
+                  Luxury Residential Buildings
                 </span>
               </div>
             </div>
