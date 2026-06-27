@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop"; // 👈 Import
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -18,8 +19,8 @@ import NightPatrol from "./pages/services/NightPatrol";
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop /> {/* 👈 Add here */}
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />} />
 
