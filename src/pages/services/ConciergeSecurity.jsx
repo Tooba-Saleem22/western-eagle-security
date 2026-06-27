@@ -9,20 +9,20 @@ import "swiper/css/pagination";
 
 const testimonials = [
   {
-    name: "Michael R.",
-    text: "Western Eagle Security provided exceptional service for our commercial property. Their guards were professional, punctual, and always alert. Highly recommended.",
+    name: "Jennifer M.",
+    text: "Western Eagle Security has transformed the experience at our condominium. Their concierge officers are always professional, welcoming, and attentive, making residents and visitors feel both secure and valued.",
   },
   {
-    name: "Sarah J.",
-    text: "Their team exceeded our expectations during our construction project. Reliable communication and excellent security coverage throughout.",
+    name: "Robert K.",
+    text: "We needed a concierge security team that could balance customer service with strong security practices. Western Eagle Security exceeded our expectations with excellent visitor management and reliable access control.",
   },
   {
-    name: "David L.",
-    text: "We've worked with several security companies before, but Western Eagle Security stands out for professionalism and quick response.",
+    name: "Amanda L.",
+    text: "Our office building has benefited greatly from their concierge security services. Their officers greet guests professionally, monitor access efficiently, and respond quickly whenever assistance is needed.",
   },
   {
-    name: "Emily W.",
-    text: "Outstanding customer service and highly trained guards. We feel much safer knowing they are protecting our facility.",
+    name: "Daniel S.",
+    text: "The team provides outstanding concierge security for our mixed-use property. Their professionalism, attention to detail, and friendly approach have received positive feedback from both tenants and visitors.",
   },
 ];
 
@@ -66,12 +66,14 @@ const ConciergeSecurity = () => {
               for your property.
             </p>
 
-            <a
-              href="/contact"
-              className="inline-block bg-white text-[#005FCC] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300"
-            >
-              Obtain a Free Quote
-            </a>
+            <div className="text-center">
+              <a
+                href="/contact"
+                className="inline-block bg-white text-[#005FCC] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300"
+              >
+                Obtain a Free Quote
+              </a>
+            </div>
           </div>
         </div>
       </section>
