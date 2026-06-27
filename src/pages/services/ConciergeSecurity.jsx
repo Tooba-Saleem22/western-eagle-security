@@ -1,5 +1,30 @@
 import { CheckCircle2 } from "lucide-react";
 import { BadgeDollarSign, RefreshCcw, Headset } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+const testimonials = [
+  {
+    name: "Michael R.",
+    text: "Western Eagle Security provided exceptional service for our commercial property. Their guards were professional, punctual, and always alert. Highly recommended.",
+  },
+  {
+    name: "Sarah J.",
+    text: "Their team exceeded our expectations during our construction project. Reliable communication and excellent security coverage throughout.",
+  },
+  {
+    name: "David L.",
+    text: "We've worked with several security companies before, but Western Eagle Security stands out for professionalism and quick response.",
+  },
+  {
+    name: "Emily W.",
+    text: "Outstanding customer service and highly trained guards. We feel much safer knowing they are protecting our facility.",
+  },
+];
 
 const ConciergeSecurity = () => {
   return (
@@ -268,6 +293,50 @@ const ConciergeSecurity = () => {
                 a professional experience for every client.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+      {/* TESTIMONIALS */}
+      <section className="px-6 md:px-12 py-20 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-[#4EA5FF] rounded-[32px] shadow-2xl px-8 md:px-14 py-5 md:py-12 overflow-hidden">
+            <div className="text-center mb-12">
+              <p className="text-black font-semibold uppercase tracking-wider mb-2">
+                Testimonials
+              </p>
+
+              <h2 className="text-4xl md:text-5xl font-bold text-black">
+                What Our Clients Say
+              </h2>
+            </div>
+
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              navigation
+              pagination={{ clickable: true }}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              loop
+              className="testimonialSwiper"
+            >
+              {testimonials.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div className="max-w-3xl mx-auto text-center py-6">
+                    <p className="text-black text-xl md:text-2xl leading-relaxed">
+                      "{item.text}"
+                    </p>
+
+                    <div className="mt-8">
+                      <h4 className="text-black text-2xl font-semibold">
+                        {item.name}
+                      </h4>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>

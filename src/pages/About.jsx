@@ -297,45 +297,47 @@ const About = () => {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="bg-[#4EA5FF] py-9 px-6 md:px-12 overflow-hidden">
+      <section className="px-6 md:px-12 py-20 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-black font-semibold mb-3 uppercase tracking-wider">
-              Testimonials
-            </p>
+          <div className="bg-[#4EA5FF] rounded-[32px] shadow-2xl px-8 md:px-14 py-5 md:py-12 overflow-hidden">
+            <div className="text-center mb-12">
+              <p className="text-black font-semibold uppercase tracking-wider mb-2">
+                Testimonials
+              </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-black">
-              What Our Clients Say
-            </h2>
-          </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-black">
+                What Our Clients Say
+              </h2>
+            </div>
 
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
-            loop
-            className="testimonialSwiper"
-          >
-            {testimonials.map((item, index) => (
-              <SwiperSlide key={index}>
-                <div className="relative max-w-4xl mx-auto text-center py-10 px-8">
-                  <p className="text-black text-xl md:text-3xl leading-relaxed font-light">
-                    "{item.text}"
-                  </p>
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              navigation
+              pagination={{ clickable: true }}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              loop
+              className="testimonialSwiper"
+            >
+              {testimonials.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div className="max-w-3xl mx-auto text-center py-6">
+                    <p className="text-black text-xl md:text-2xl leading-relaxed">
+                      "{item.text}"
+                    </p>
 
-                  <div className="mt-10">
-                    <h4 className="text-black text-2xl font-semibold">
-                      {item.name}
-                    </h4>
+                    <div className="mt-8">
+                      <h4 className="text-black text-2xl font-semibold">
+                        {item.name}
+                      </h4>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </section>
 
