@@ -1,7 +1,305 @@
 import React from "react";
+import { CheckCircle2 } from "lucide-react";
+import { BadgeDollarSign, RefreshCcw, Headset } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+const testimonials = [
+  {
+    name: "James R.",
+    text: "Western Eagle Security did an excellent job securing our construction site. Their guards were always present, alert, and professional throughout the project.",
+  },
+  {
+    name: "Emily S.",
+    text: "We had ongoing issues with theft before hiring them. After their team was assigned, our site stayed completely secure with no incidents.",
+  },
+  {
+    name: "Daniel K.",
+    text: "Very reliable construction site security. They controlled access properly and ensured only authorized workers entered the site.",
+  },
+  {
+    name: "Sophia M.",
+    text: "Their guards were punctual and very attentive. We felt confident leaving expensive equipment on-site knowing it was protected.",
+  },
+];
 
 const ConstructionSecurity = () => {
-  return <div>ConstructionSecurity</div>;
+  return (
+    <div className="bg-white">
+      {/* Intro Section */}
+      <section className="py-24 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
+          {/* Left Content */}
+          <div className="lg:col-span-2">
+            <h1 className="text-3xl md:text-4xl font-bold text-[#005FCC] leading-tight mb-8">
+              Reliable Construction Site Security Services in Alberta
+            </h1>
+
+            <p className="text-gray-800 text-lg leading-8 mb-6">
+              Western Eagle Security provides professional construction site
+              security services designed to protect tools, machinery, materials,
+              and workers. We help prevent theft, vandalism, and unauthorized
+              access on active construction sites across Alberta.
+            </p>
+
+            <p className="text-gray-800 text-lg leading-8">
+              Our trained security guards ensure 24/7 site protection, monitor
+              entry and exit points, and maintain strict access control to keep
+              your project safe and on schedule.
+            </p>
+          </div>
+
+          {/* Right Box */}
+          <div className="bg-[#005FCC] rounded-xl p-8 md:p-10 text-white shadow-xl flex flex-col justify-center min-h-[340px]">
+            <h3 className="text-2xl font-bold mb-5">Need Site Protection?</h3>
+
+            <p className="leading-7 text-white/90 mb-8">
+              Contact us today for reliable construction site security solutions
+              tailored to your project requirements.
+            </p>
+
+            <div className="text-center">
+              <a
+                href="/contact"
+                className="inline-block bg-white text-[#005FCC] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300"
+              >
+                Obtain a Free Quote
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* PROFESSIONAL STATIC SECURITY */}
+      <section className="py-24 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          {/* Top Row */}
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            {/* Left Image */}
+            <div>
+              <img
+                src="/About.png"
+                alt="Static Security Guards"
+                className="w-full rounded-xl shadow-lg object-cover"
+              />
+            </div>
+
+            {/* Right Content */}
+            <div>
+              <p className="text-[#005FCC] font-semibold uppercase tracking-wider mb-3">
+                Construction Security
+              </p>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0A2540] leading-tight mb-6">
+                On-Site Construction Security You Can Trust
+              </h2>
+
+              <p className="text-gray-700 text-lg leading-8 mb-3">
+                We provide trained security guards for construction sites to
+                protect valuable equipment, materials, and ongoing work
+                activities.
+              </p>
+
+              <p className="text-gray-700 text-lg leading-8 mb-5">
+                Our team ensures strict access control, site monitoring, and
+                incident prevention throughout all project phases.
+              </p>
+
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 size={20} className="text-[#005FCC]" />
+                  <span className="text-gray-700">24/7 Site Monitoring</span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 size={20} className="text-[#005FCC]" />
+                  <span className="text-gray-700">
+                    Equipment & Material Protection
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 size={20} className="text-[#005FCC]" />
+                  <span className="text-gray-700">
+                    Access Control & Visitor Logs
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 size={20} className="text-[#005FCC]" />
+                  <span className="text-gray-700">
+                    Theft & Vandalism Prevention
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom */}
+          <div className="border-t border-gray-200 pt-16">
+            <p className="text-[#005FCC] font-semibold uppercase tracking-wider mb-3">
+              Tailored Security Solutions
+            </p>
+
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0A2540] mb-6">
+              Customized Construction Security Services
+            </h2>
+
+            <p className="text-gray-700 text-lg leading-8 mb-4">
+              We understand that every construction site has different risks and
+              requirements. Our security solutions are designed to match your
+              project size, timeline, and budget.
+            </p>
+
+            <p className="text-gray-700 text-lg leading-8 mb-6">
+              From small residential builds to large commercial developments, we
+              provide flexible and reliable protection.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="flex items-center gap-3">
+                <CheckCircle2 size={20} className="text-[#005FCC]" />
+                <span className="text-gray-700">
+                  Residential Construction Sites
+                </span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <CheckCircle2 size={20} className="text-[#005FCC]" />
+                <span className="text-gray-700">Commercial Projects</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <CheckCircle2 size={20} className="text-[#005FCC]" />
+                <span className="text-gray-700">Industrial Construction</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <CheckCircle2 size={20} className="text-[#005FCC]" />
+                <span className="text-gray-700">Renovation Sites</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* BENEFITS */}
+      <section className="py-24 px-6 md:px-12 bg-[#005FCC]/5">
+        <div className="max-w-7xl mx-auto">
+          {/* Heading */}
+          <div className="text-center mb-14">
+            <p className="text-[#005FCC] font-semibold uppercase tracking-wider mb-3">
+              Why Choose Us
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540]">
+              Benefits of Choosing Us
+            </h2>
+          </div>
+
+          {/* Cards */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="group bg-white rounded-xl p-8 shadow-sm border-b-4 border-transparent hover:border-[#005FCC] hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6">
+                <BadgeDollarSign size={30} className="text-[#005FCC]" />
+              </div>
+
+              <h3 className="text-2xl font-bold text-[#0A2540] mb-4">
+                Competitive Pricing
+              </h3>
+
+              <p className="text-gray-600 leading-7">
+                We provide professional concierge security services at
+                competitive rates, delivering exceptional value without
+                compromising on safety, reliability, or service quality.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="group bg-white rounded-xl p-8 shadow-sm border-b-4 border-transparent hover:border-[#005FCC] hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6">
+                <RefreshCcw size={30} className="text-[#005FCC]" />
+              </div>
+
+              <h3 className="text-2xl font-bold text-[#0A2540] mb-4">
+                Flexible Solutions
+              </h3>
+
+              <p className="text-gray-600 leading-7">
+                Every property has unique security requirements. We create
+                customized concierge security plans that adapt to your building,
+                operations, and budget.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="group bg-white rounded-xl p-8 shadow-sm border-b-4 border-transparent hover:border-[#005FCC] hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6">
+                <Headset size={30} className="text-[#005FCC]" />
+              </div>
+
+              <h3 className="text-2xl font-bold text-[#0A2540] mb-4">
+                Exceptional Customer Service
+              </h3>
+
+              <p className="text-gray-600 leading-7">
+                Our team builds lasting relationships through clear
+                communication, responsive support, and a commitment to providing
+                a professional experience for every client.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* TESTIMONIALS */}
+      <section className="px-6 md:px-12 py-20 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-[#4EA5FF] rounded-[32px] shadow-2xl px-8 md:px-14 py-5 md:py-12 overflow-hidden">
+            <div className="text-center mb-12">
+              <p className="text-black font-semibold uppercase tracking-wider mb-2">
+                Testimonials
+              </p>
+
+              <h2 className="text-4xl md:text-5xl font-bold text-black">
+                What Our Clients Say
+              </h2>
+            </div>
+
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              navigation
+              pagination={{ clickable: true }}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              loop
+              className="testimonialSwiper"
+            >
+              {testimonials.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div className="max-w-3xl mx-auto text-center py-6">
+                    <p className="text-black text-xl md:text-2xl leading-relaxed">
+                      "{item.text}"
+                    </p>
+
+                    <div className="mt-8">
+                      <h4 className="text-black text-2xl font-semibold">
+                        {item.name}
+                      </h4>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default ConstructionSecurity;
