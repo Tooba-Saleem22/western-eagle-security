@@ -1,5 +1,13 @@
-import { CheckCircle2 } from "lucide-react";
-import { BadgeDollarSign, RefreshCcw, Headset } from "lucide-react";
+import {
+  CheckCircle2,
+  BadgeDollarSign,
+  RefreshCcw,
+  Headset,
+  PhoneCall,
+  ArrowRight,
+  Quote,
+  Star,
+} from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
@@ -25,6 +33,14 @@ const testimonials = [
     text: "The team provides outstanding concierge security for our mixed-use property. Their professionalism, attention to detail, and friendly approach have received positive feedback from both tenants and visitors.",
   },
 ];
+
+const getInitials = (name) =>
+  name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
 
 const ConciergeSecurity = () => {
   return (
@@ -58,7 +74,12 @@ const ConciergeSecurity = () => {
 
           {/* Right Box */}
           <div className="bg-[#005FCC] rounded-xl p-8 md:p-10 text-white shadow-xl lg:mt-5 min-h-[340px] flex flex-col justify-center">
-            <h3 className="text-2xl font-bold mb-5">How Can We Help You?</h3>
+            <div className="flex items-center gap-3 mb-5">
+              <span className="bg-white/15 rounded-full p-2">
+                <PhoneCall className="w-5 h-5" />
+              </span>
+              <h3 className="text-2xl font-bold">How Can We Help You?</h3>
+            </div>
 
             <p className="leading-7 text-white/90 mb-8">
               Contact Western Eagle Security today to discuss your concierge
@@ -69,14 +90,16 @@ const ConciergeSecurity = () => {
             <div className="text-center">
               <a
                 href="/contact"
-                className="inline-block bg-white text-[#005FCC] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#005FCC] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300"
               >
+                <ArrowRight className="w-4 h-4" />
                 Obtain a Free Quote
               </a>
             </div>
           </div>
         </div>
       </section>
+
       {/* PROFESSIONAL CONCIERGE SECURITY */}
       <section className="py-24  px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
@@ -178,12 +201,25 @@ const ConciergeSecurity = () => {
               unique requirements.
             </p>
 
-            <p className="text-gray-700 text-lg leading-8 mb-6">
+            <p className="text-gray-700 text-lg leading-8 mb-10">
               Our flexible service plans combine professional protection,
               exceptional customer service, and reliable security coverage,
               ensuring every client receives a solution that fits both their
               operational needs and budget.
             </p>
+
+            {/* IMAGE PLACEHOLDER: swap src with a real photo of a concierge officer at a front desk/lobby */}
+            <div className="relative rounded-xl overflow-hidden shadow-lg h-64 md:h-80 mb-10">
+              <img
+                src="https://placehold.co/1600x500/0A2540/FFFFFF?text=Add+Concierge+Photo+Here"
+                alt="Concierge security officer greeting a visitor"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/70 via-transparent to-transparent" />
+              <p className="absolute bottom-4 left-5 text-white font-semibold text-lg">
+                A warm, professional welcome at every entrance
+              </p>
+            </div>
 
             <div className="grid md:grid-cols-2 gap-4">
               <div className="flex items-center gap-3">
@@ -229,6 +265,7 @@ const ConciergeSecurity = () => {
           </div>
         </div>
       </section>
+
       {/* BENEFITS */}
       <section className="py-24 px-6 md:px-12 bg-[#005FCC]/5">
         <div className="max-w-7xl mx-auto">
@@ -247,7 +284,7 @@ const ConciergeSecurity = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <div className="group bg-white rounded-xl p-8 shadow-sm border-b-4 border-transparent hover:border-[#005FCC] hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <BadgeDollarSign size={30} className="text-[#005FCC]" />
               </div>
 
@@ -264,7 +301,7 @@ const ConciergeSecurity = () => {
 
             {/* Card 2 */}
             <div className="group bg-white rounded-xl p-8 shadow-sm border-b-4 border-transparent hover:border-[#005FCC] hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <RefreshCcw size={30} className="text-[#005FCC]" />
               </div>
 
@@ -281,7 +318,7 @@ const ConciergeSecurity = () => {
 
             {/* Card 3 */}
             <div className="group bg-white rounded-xl p-8 shadow-sm border-b-4 border-transparent hover:border-[#005FCC] hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Headset size={30} className="text-[#005FCC]" />
               </div>
 
@@ -298,10 +335,13 @@ const ConciergeSecurity = () => {
           </div>
         </div>
       </section>
+
       {/* TESTIMONIALS */}
       <section className="px-6 md:px-12 py-20 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-[#4EA5FF] rounded-[32px] shadow-2xl px-8 md:px-14 py-5 md:py-12 overflow-hidden">
+          <div className="relative bg-[#4EA5FF] rounded-[32px] shadow-2xl px-8 md:px-14 py-5 md:py-12 overflow-hidden">
+            <Quote className="absolute top-6 left-6 md:left-10 w-16 h-16 text-white/25" />
+
             <div className="text-center mb-12">
               <p className="text-black font-semibold uppercase tracking-wider mb-2">
                 Testimonials
@@ -326,11 +366,24 @@ const ConciergeSecurity = () => {
               {testimonials.map((item, index) => (
                 <SwiperSlide key={index}>
                   <div className="max-w-3xl mx-auto text-center py-6">
+                    <div className="flex justify-center gap-1 mb-5">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star
+                          key={i}
+                          size={18}
+                          className="fill-amber-400 text-amber-400"
+                        />
+                      ))}
+                    </div>
+
                     <p className="text-black text-xl md:text-2xl leading-relaxed">
                       "{item.text}"
                     </p>
 
-                    <div className="mt-8">
+                    <div className="mt-8 flex flex-col items-center gap-3">
+                      <div className="w-14 h-14 rounded-full bg-[#0A2540] text-white flex items-center justify-center font-bold text-lg shadow-md">
+                        {getInitials(item.name)}
+                      </div>
                       <h4 className="text-black text-2xl font-semibold">
                         {item.name}
                       </h4>
