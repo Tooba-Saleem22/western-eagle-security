@@ -1,10 +1,11 @@
 import { CheckCircle2 } from "lucide-react";
+import { BadgeDollarSign, RefreshCcw, Headset } from "lucide-react";
 
 const ConciergeSecurity = () => {
   return (
     <div className="bg-white">
       {/* Intro Section */}
-      <section className="py-24 px-6 md:px-12">
+      <section className="py-24  px-6 md:px-12">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
           {/* Left Content */}
           <div className="lg:col-span-2">
@@ -50,7 +51,7 @@ const ConciergeSecurity = () => {
         </div>
       </section>
       {/* PROFESSIONAL CONCIERGE SECURITY */}
-      <section className="py-24 px-6 md:px-12">
+      <section className="py-24  px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           {/* Top Row */}
           <div className="grid lg:grid-cols-2 gap-14 items-center">
@@ -197,6 +198,75 @@ const ConciergeSecurity = () => {
                   Luxury Residential Buildings
                 </span>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* BENEFITS */}
+      <section className="py-24 px-6 md:px-12 bg-[#005FCC]/5">
+        <div className="max-w-7xl mx-auto">
+          {/* Heading */}
+          <div className="text-center mb-14">
+            <p className="text-[#005FCC] font-semibold uppercase tracking-wider mb-3">
+              Why Choose Us
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540]">
+              Benefits of Choosing Us
+            </h2>
+          </div>
+
+          {/* Cards */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="group bg-white rounded-xl p-8 shadow-sm border-b-4 border-transparent hover:border-[#005FCC] hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6">
+                <BadgeDollarSign size={30} className="text-[#005FCC]" />
+              </div>
+
+              <h3 className="text-2xl font-bold text-[#0A2540] mb-4">
+                Competitive Pricing
+              </h3>
+
+              <p className="text-gray-600 leading-7">
+                We provide professional concierge security services at
+                competitive rates, delivering exceptional value without
+                compromising on safety, reliability, or service quality.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="group bg-white rounded-xl p-8 shadow-sm border-b-4 border-transparent hover:border-[#005FCC] hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6">
+                <RefreshCcw size={30} className="text-[#005FCC]" />
+              </div>
+
+              <h3 className="text-2xl font-bold text-[#0A2540] mb-4">
+                Flexible Solutions
+              </h3>
+
+              <p className="text-gray-600 leading-7">
+                Every property has unique security requirements. We create
+                customized concierge security plans that adapt to your building,
+                operations, and budget.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="group bg-white rounded-xl p-8 shadow-sm border-b-4 border-transparent hover:border-[#005FCC] hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6">
+                <Headset size={30} className="text-[#005FCC]" />
+              </div>
+
+              <h3 className="text-2xl font-bold text-[#0A2540] mb-4">
+                Exceptional Customer Service
+              </h3>
+
+              <p className="text-gray-600 leading-7">
+                Our team builds lasting relationships through clear
+                communication, responsive support, and a commitment to providing
+                a professional experience for every client.
+              </p>
             </div>
           </div>
         </div>
