@@ -1,60 +1,101 @@
-import { Shield, Building2, UserCheck, Car } from "lucide-react";
+import { Shield, Building2, UserCheck, Car, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
     {
-      icon: <Shield size={40} />,
+      icon: Shield,
       title: "Static Security Guard",
-      desc: "On-site protection for buildings, property, and visitor control.",
+      desc: "Professional on-site security officers protecting your property, employees, and visitors around the clock.",
+      link: "/services/static-security",
     },
     {
-      icon: <Building2 size={40} />,
+      icon: Building2,
       title: "Construction Security",
-      desc: "Monitoring construction sites, tools, and preventing theft or vandalism.",
+      desc: "Prevent theft, vandalism, and unauthorized access with dedicated construction site security.",
+      link: "/services/construction-security",
     },
     {
-      icon: <UserCheck size={40} />,
+      icon: UserCheck,
       title: "Concierge Security",
-      desc: "Front desk security with visitor handling and access control.",
+      desc: "Professional front desk security, visitor management, and access control for commercial properties.",
+      link: "/services/concierge-security",
     },
     {
-      icon: <Car size={40} />,
+      icon: Car,
       title: "Mobile Patrol",
-      desc: "Regular patrols with fast response, reports, and perimeter checks.",
+      desc: "Scheduled and random patrols providing rapid response and complete property inspections.",
+      link: "/services/mobile-patrol",
     },
   ];
 
   return (
-    <section className="w-full bg-white py-16 px-6 md:px-12">
-      {/* Heading */}
-      <div className="text-center max-w-2xl mx-auto mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#0A2540]">
-          Our Services
-        </h2>
-        <p className="mt-3 text-gray-600">
-          Professional security solutions tailored to protect your people and
-          property.
-        </p>
-      </div>
+    <section className="bg-[#050505] py-2 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
 
-      {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {services.map((item, index) => (
-          <div
-            key={index}
-            className="border border-gray-100 shadow-sm p-6 rounded-xl hover:shadow-lg hover:-translate-y-1 transition duration-300 text-center"
-          >
-            <div className="text-[#007BFF] flex justify-center mb-4">
-              {item.icon}
-            </div>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="inline-block px-5 py-2 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 text-[#D4AF37] uppercase tracking-[0.2em] text-xs font-semibold">
+            What We Offer
+          </span>
 
-            <h3 className="text-lg font-semibold text-[#0A2540]">
-              {item.title}
-            </h3>
+          <h2 className="mt-6 text-4xl md:text-5xl font-bold text-white font-serif">
+            Our Security
+            <span className="text-[#D4AF37]"> Services</span>
+          </h2>
 
-            <p className="mt-2 text-sm text-gray-600">{item.desc}</p>
-          </div>
-        ))}
+          <div className="w-24 h-1 bg-[#D4AF37] rounded-full mx-auto mt-6"></div>
+
+          <p className="mt-6 text-lg text-gray-400 leading-8">
+            We provide reliable and professional security solutions designed to
+            safeguard people, businesses, and valuable assets throughout
+            Alberta.
+          </p>
+        </div>
+
+        {/* Cards */}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+
+            return (
+              <div
+                key={index}
+                className="group bg-[#111111] border border-[#D4AF37]/15 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-3 hover:border-[#D4AF37] hover:shadow-[0_15px_45px_rgba(212,175,55,.18)]"
+              >
+                {/* Icon */}
+
+                <div className="w-16 h-16 rounded-full bg-[#D4AF37]/10 flex items-center justify-center mb-7 group-hover:bg-[#D4AF37] transition">
+                  <Icon
+                    size={32}
+                    className="text-[#D4AF37] group-hover:text-black transition"
+                  />
+                </div>
+
+                {/* Title */}
+
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+
+                <p className="text-gray-400 leading-7 mb-8">{service.desc}</p>
+
+                {/* Link */}
+
+                <Link
+                  to={service.link}
+                  className="inline-flex items-center gap-2 font-semibold text-[#D4AF37] hover:gap-3 transition-all"
+                >
+                  Learn More
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

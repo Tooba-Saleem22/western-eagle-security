@@ -1,3 +1,4 @@
+import CareersCTA from "../components/CareersCTA";
 import ContactFAQ from "../components/ContactFAQ";
 import Services from "../components/services";
 import {
@@ -89,57 +90,98 @@ const Home = () => {
   return (
     <div className="m-0 p-0 bg-black">
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
-        <div className="absolute inset-0 -z-10">
+      <section className="relative min-h-screen  overflow-hidden flex items-center bg-[#050505]">
+        {/* Background */}
+        <div className="absolute inset-0">
           <div
-            className="hidden md:block w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: "url('/hero.png')" }}
+            className="hidden md:block w-full h-full bg-cover bg-center scale-105"
+            style={{
+              backgroundImage: "url('/hero.png')",
+            }}
           />
+
           <div
             className="md:hidden w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: "url('/mobile.heroo.jpg')" }}
+            style={{
+              backgroundImage: "url('/mobile.heroo.jpg')",
+            }}
           />
         </div>
 
-        {/* Cinematic dark overlay so the gold reads on any photo */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/25" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/80 to-black/40" />
 
-        <ShieldWatermark className="hidden lg:block absolute -right-10 top-1/2 -translate-y-1/2 w-72 h-auto opacity-[0.08] -z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
 
-        <div className="relative w-full min-h-screen flex items-center">
-          <div className="max-w-3xl px-6 md:px-10 text-left">
-            <p className="text-[#D4AF37] uppercase tracking-[0.2em] font-semibold text-sm md:text-base mb-5">
-              Construction <span className="mx-2">·</span> Residential{" "}
-              <span className="mx-2">·</span> Retail Security
-            </p>
+        {/* Gold Glow */}
+        <div className="absolute top-40 -left-20 w-80 h-80 bg-[#D4AF37]/10 blur-[120px]" />
 
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight">
-              Premium Security Solutions You Can Trust Across Alberta.
+        <div className="absolute bottom-20 right-0 w-96 h-96 bg-[#D4AF37]/5 blur-[140px]" />
+
+        {/* Content */}
+        <div className="relative max-w-7xl mt-14 mx-auto px-6 lg:px-10 w-full">
+          <div className="max-w-4xl">
+            {/* Badge */}
+
+            <span className="inline-flex items-center rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-5 py-2 text-xs md:text-sm uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
+              Construction Security
+              <span className="mx-3 text-[#D4AF37]/60">•</span>
+              Mobile Patrol
+              <span className="mx-3 text-[#D4AF37]/60">•</span>
+              Concierge
+            </span>
+
+            {/* Heading */}
+
+            <h1 className="mt-8 font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] text-white">
+              Professional
+              <span className="block text-[#D4AF37]">Security Services</span>
+              For Every Industry
             </h1>
 
-            <p className="mt-5 text-base md:text-xl text-white/70 max-w-xl">
-              Licensed, professional, and reliable security services tailored to
-              protect your assets and peace of mind.
+            {/* Gold Line */}
+
+            <div className="mt-8 w-32 h-1 rounded-full bg-[#D4AF37]" />
+
+            {/* Paragraph */}
+
+            <p className="mt-8 text-lg lg:text-xl text-gray-300 leading-8 max-w-2xl">
+              Western Eagle Security provides licensed security guards, mobile
+              patrol services, concierge security, and construction site
+              protection across Alberta with a commitment to safety,
+              professionalism, and rapid response.
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-4">
+            {/* Buttons */}
+
+            <div className="mt-10 flex mb-20 flex-wrap gap-5">
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3 bg-[#D4AF37] text-black font-semibold hover:bg-[#E8C766] transition shadow-lg shadow-black/40"
+                className="inline-flex items-center gap-3 rounded-lg bg-[#D4AF37] px-8 py-4 font-bold text-black transition-all duration-300 hover:scale-105 hover:bg-[#E8C766] shadow-[0_10px_35px_rgba(212,175,55,.35)]"
               >
                 Contact Us
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-5 h-5" />
               </a>
 
               <a
                 href="tel:5876647683"
-                className="inline-flex items-center gap-2 px-7 py-3 border border-[#D4AF37]/70 text-white font-semibold hover:bg-[#D4AF37] hover:text-black transition"
+                className="inline-flex items-center gap-3 rounded-lg border border-[#D4AF37] px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-[#D4AF37] hover:text-black"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-5 h-5" />
                 Call Now
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Scroll Indicator */}
+
+        <div className="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center">
+          <span className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-3">
+            Scroll
+          </span>
+
+          <div className="w-[2px] h-14 bg-gradient-to-b from-[#D4AF37] to-transparent" />
         </div>
       </section>
 
@@ -395,6 +437,7 @@ const Home = () => {
       </section>
 
       <ContactFAQ />
+      <CareersCTA />
     </div>
   );
 };
