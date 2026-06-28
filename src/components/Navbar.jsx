@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -11,181 +11,235 @@ const Navbar = () => {
     setMobileServicesOpen(false);
   };
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   return (
-    <header className="sticky top-0 z-50 bg-black/80 backdrop-blur-md shadow-sm border-b border-gray-100">
-      <nav className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" onClick={closeMenu}>
-            <img
-              src="/navbarlogo.png"
-              alt="Western Eagle Security"
-              className="h-12 w-auto"
-            />
-          </Link>
-
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-8">
-            <Link
-              className="text-[#D4AF37]  hover:text-[#D4AF37]  font-semibold"
-              to="/"
-            >
-              Home
+    <>
+      <header className="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-[#D4AF37]/30 shadow-xl">
+        <nav className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-between h-24">
+            {/* Logo */}
+            <Link to="/" onClick={closeMenu}>
+              <img
+                src="/navbarlogo.png"
+                alt="Western Eagle Security"
+                className="h-16 lg:h-20 w-auto transition-transform duration-300 hover:scale-105"
+              />
             </Link>
 
-            <Link
-              className="text-[#D4AF37]  hover:text-[#D4AF37]  font-semibold"
-              to="/about"
-            >
-              About Us
-            </Link>
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex items-center gap-8">
+              <Link
+                to="/"
+                className="font-semibold text-white hover:text-[#D4AF37] transition"
+              >
+                Home
+              </Link>
 
-            {/* Services Dropdown */}
-            <div className="relative group">
-              <button className="flex items-center gap-1 text-[#D4AF37]  hover:text-[#D4AF37]  font-semibold">
-                Services <ChevronDown size={18} />
-              </button>
+              <Link
+                to="/about"
+                className="font-semibold text-white hover:text-[#D4AF37] transition"
+              >
+                About Us
+              </Link>
 
-              <div className="absolute top-full left-0 mt-2 w-72 bg-white border shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                <Link
-                  className="block px-5 py-3 hover:bg-[#007BFF]/10 hover:text-[#D4AF37] "
-                  to="/services/static-security"
-                >
-                  Static Security Guard
-                </Link>
+              {/* Services */}
+              <div className="relative group">
+                <button className="flex items-center gap-1 font-semibold text-white hover:text-[#D4AF37] transition">
+                  Services
+                  <ChevronDown
+                    size={18}
+                    className="group-hover:rotate-180 transition-transform duration-300"
+                  />
+                </button>
 
-                <Link
-                  className="block px-5 py-3 hover:bg-[#007BFF]/10 hover:text-[#D4AF37] "
-                  to="/services/construction-security"
-                >
-                  Construction Site Security
-                </Link>
+                <div className="absolute left-0 top-full mt-3 w-72 rounded-xl bg-[#111111] border border-[#D4AF37]/30 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden">
+                  <Link
+                    to="/services/static-security"
+                    className="block px-5 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition"
+                  >
+                    Static Security Guard
+                  </Link>
 
-                <Link
-                  className="block px-5 py-3 hover:bg-[#007BFF]/10 hover:text-[#D4AF37] "
-                  to="/services/concierge-security"
-                >
-                  Concierge Security
-                </Link>
+                  <Link
+                    to="/services/construction-security"
+                    className="block px-5 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition"
+                  >
+                    Construction Site Security
+                  </Link>
 
-                <Link
-                  className="block px-5 py-3 hover:bg-[#007BFF]/10 hover:text-[#D4AF37] "
-                  to="/services/mobile-patrol"
-                >
-                  Mobile Patrol Services
-                </Link>
+                  <Link
+                    to="/services/concierge-security"
+                    className="block px-5 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition"
+                  >
+                    Concierge Security
+                  </Link>
+
+                  <Link
+                    to="/services/mobile-patrol"
+                    className="block px-5 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition"
+                  >
+                    Mobile Patrol Services
+                  </Link>
+                </div>
               </div>
+
+              <Link
+                to="/pricing"
+                className="font-semibold text-white hover:text-[#D4AF37] transition"
+              >
+                Pricing
+              </Link>
+
+              <Link
+                to="/contact"
+                className="px-6 py-2.5 rounded-lg border-2 border-[#D4AF37] text-[#D4AF37] font-semibold hover:bg-[#D4AF37] hover:text-black transition-all duration-300"
+              >
+                Contact
+              </Link>
             </div>
 
-            <Link
-              className="text-[#D4AF37]  hover:text-[#D4AF37]  font-semibold"
-              to="/pricing"
+            {/* Mobile Button */}
+            <button
+              onClick={() => setIsOpen(true)}
+              className="lg:hidden text-[#D4AF37]"
             >
-              Pricing
-            </Link>
-
-            {/* Contact Button (FIXED HOVER) */}
-            <Link
-              to="/contact"
-              className="px-5 py-2 border border-[#D4AF37]  text-[#D4AF37]  font-semibold hover:bg-[#D4AF37]  hover:text-black  hover:border-[#D4AF37]  transition"
-            >
-              Contact
-            </Link>
+              <Menu size={32} />
+            </button>
           </div>
+        </nav>
+      </header>
 
-          {/* Mobile Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-[#0A2540]"
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+      {/* Overlay */}
+      <div
+        onClick={closeMenu}
+        className={`fixed inset-0 bg-black/70 backdrop-blur-sm z-50 transition-opacity duration-500 lg:hidden ${
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      />
+
+      {/* Mobile Drawer */}
+      <div
+        className={`fixed top-0 right-0 h-screen w-[85%] max-w-sm bg-[#0B0B0B] z-[60] transform transition-transform duration-500 ease-in-out lg:hidden border-l border-[#D4AF37]/30 shadow-2xl ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Header */}
+        <div className="flex justify-between items-center px-6 h-24 border-b border-[#D4AF37]/20">
+          <img
+            src="/navbarlogo.png"
+            alt="Western Eagle Security"
+            className="h-14"
+          />
+
+          <button onClick={closeMenu} className="text-[#D4AF37]">
+            <X size={32} />
           </button>
         </div>
-      </nav>
 
-      {/* MOBILE MENU */}
-      {isOpen && (
-        <div className="lg:hidden bg-black border-t px-6 py-4 space-y-3">
+        {/* Menu */}
+        <div className="px-7 py-8 space-y-6">
           <Link
-            onClick={closeMenu}
-            className="block font-semibold text-[#D4AF37] "
             to="/"
+            onClick={closeMenu}
+            className="block text-xl font-semibold text-white hover:text-[#D4AF37] transition"
           >
             Home
           </Link>
 
           <Link
-            onClick={closeMenu}
-            className="block font-semibold text-[#D4AF37] "
             to="/about"
+            onClick={closeMenu}
+            className="block text-xl font-semibold text-white hover:text-[#D4AF37] transition"
           >
             About Us
           </Link>
 
-          {/* MOBILE SERVICES DROPDOWN (NEW) */}
-          <button
-            onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-            className="flex items-center justify-between w-full font-semibold text-[#D4AF37]"
-          >
-            Services
-            <ChevronDown size={18} />
-          </button>
+          {/* Services */}
+          <div>
+            <button
+              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+              className="flex items-center justify-between w-full text-xl font-semibold text-white hover:text-[#D4AF37]"
+            >
+              Services
+              <ChevronDown
+                size={20}
+                className={`transition-transform duration-300 ${
+                  mobileServicesOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
 
-          {mobileServicesOpen && (
-            <div className="pl-4 space-y-2">
-              <Link
-                onClick={closeMenu}
-                className="block text-gray-700 hover:text-[#D4AF37] "
-                to="/services/static-security"
-              >
-                Static Security Guard
-              </Link>
+            <div
+              className={`overflow-hidden transition-all duration-300 ${
+                mobileServicesOpen ? "max-h-96 mt-5" : "max-h-0"
+              }`}
+            >
+              <div className="border-l border-[#D4AF37]/30 pl-5 space-y-4">
+                <Link
+                  to="/services/static-security"
+                  onClick={closeMenu}
+                  className="block text-gray-300 hover:text-[#D4AF37]"
+                >
+                  Static Security Guard
+                </Link>
 
-              <Link
-                onClick={closeMenu}
-                className="block text-gray-700 hover:text-[#D4AF37] "
-                to="/services/construction-security"
-              >
-                Construction Site Security
-              </Link>
+                <Link
+                  to="/services/construction-security"
+                  onClick={closeMenu}
+                  className="block text-gray-300 hover:text-[#D4AF37]"
+                >
+                  Construction Site Security
+                </Link>
 
-              <Link
-                onClick={closeMenu}
-                className="block text-gray-700 hover:text-[#D4AF37]"
-                to="/services/concierge-security"
-              >
-                Concierge Security
-              </Link>
+                <Link
+                  to="/services/concierge-security"
+                  onClick={closeMenu}
+                  className="block text-gray-300 hover:text-[#D4AF37]"
+                >
+                  Concierge Security
+                </Link>
 
-              <Link
-                onClick={closeMenu}
-                className="block text-gray-700 hover:text-[#D4AF37]"
-                to="/services/mobile-patrol"
-              >
-                Mobile Patrol Services
-              </Link>
+                <Link
+                  to="/services/mobile-patrol"
+                  onClick={closeMenu}
+                  className="block text-gray-300 hover:text-[#D4AF37]"
+                >
+                  Mobile Patrol Services
+                </Link>
+              </div>
             </div>
-          )}
+          </div>
 
           <Link
-            onClick={closeMenu}
-            className="block font-semibold text-[#D4AF37]"
             to="/pricing"
+            onClick={closeMenu}
+            className="block text-xl font-semibold text-white hover:text-[#D4AF37]"
           >
             Pricing
           </Link>
 
-          {/* Contact Mobile */}
           <Link
-            onClick={closeMenu}
             to="/contact"
-            className="inline-block mt-2 px-5 py-2 border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black hover:border-[#D4AF37] transition"
+            onClick={closeMenu}
+            className="mt-8 flex justify-center rounded-lg border-2 border-[#D4AF37] px-6 py-3 font-semibold text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300"
           >
             Contact
           </Link>
         </div>
-      )}
-    </header>
+      </div>
+    </>
   );
 };
 
