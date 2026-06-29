@@ -45,24 +45,53 @@ const getInitials = (name) =>
 
 const MobilePatrol = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white font-sans antialiased selection:bg-[#D4AF37]/20">
+      {/* Custom Stylesheet Injection for Swiper Premium White Theme Accent */}
+      <style>{`
+        .testimonialSwiper .swiper-button-next,
+        .testimonialSwiper .swiper-button-prev {
+          color: #B8860B !important;
+          opacity: 0.6;
+          transition: opacity 0.3s ease;
+        }
+        .testimonialSwiper .swiper-button-next:hover,
+        .testimonialSwiper .swiper-button-prev:hover {
+          opacity: 1;
+        }
+        .testimonialSwiper .swiper-pagination-bullet-active {
+          background: #D4AF37 !important;
+          width: 24px !important;
+          border-radius: 4px !important;
+        }
+        .testimonialSwiper .swiper-pagination-bullet {
+          background: #B8860B;
+        }
+      `}</style>
+
       {/* Intro Section */}
-      <section className="py-24 px-6 md:px-12">
+      <section className="py-20 lg:py-28 px-6 md:px-12 bg-gradient-to-b from-[#FAF8F3] to-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
           {/* Left Content */}
-          <div className="lg:col-span-2">
-            <h1 className="text-3xl md:text-4xl font-bold text-[#005FCC] leading-tight mb-8">
-              Reliable Mobile Patrol Security Services in Alberta
+          <div className="lg:col-span-2 space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#D4AF37]/10 text-[#B8860B] font-semibold text-xs uppercase tracking-wider">
+              🛡️ Active Tactical Response
+            </div>
+
+            <h1 className="text-4xl md:text-5xl font-extrabold text-[#111111] tracking-tight leading-[1.15]">
+              Reliable Mobile Patrol <br />
+              <span className="bg-gradient-to-r from-[#B8860B] to-[#D4AF37] bg-clip-text text-transparent">
+                Security Services in Alberta
+              </span>
             </h1>
 
-            <p className="text-gray-800 text-lg leading-8 mb-6">
+            <p className="text-gray-600 text-lg leading-relaxed font-normal">
               Western Eagle Security offers professional mobile patrol services
               designed to provide fast, visible, and cost-effective security for
               commercial properties, residential communities, construction
               sites, and parking facilities across Alberta.
             </p>
 
-            <p className="text-gray-800 text-lg leading-8">
+            <p className="text-gray-600 text-lg leading-relaxed font-normal">
               Our mobile patrol units conduct scheduled and random site
               inspections, check perimeters, respond to alarms, and ensure your
               property remains safe even when on-site security is not required
@@ -70,29 +99,41 @@ const MobilePatrol = () => {
             </p>
           </div>
 
-          {/* Right Box */}
-          <div className="bg-[#005FCC] rounded-xl p-8 md:p-10 text-white shadow-xl flex flex-col justify-center min-h-[340px]">
-            <div className="flex items-center gap-3 mb-5">
-              <span className="bg-white/15 rounded-full p-2">
-                <Car className="w-5 h-5" />
-              </span>
-              <h3 className="text-2xl font-bold">
-                Need Reliable Patrol Service?
-              </h3>
+          {/* Right Box (Premium Card Match) */}
+          <div className="relative overflow-hidden bg-white rounded-3xl p-8 shadow-[0_20px_50px_rgba(212,175,55,0.08)] border border-gray-100 lg:mt-5 max-w-[420px] w-full ml-auto min-h-[340px] flex flex-col justify-between group">
+            {/* Top Golden Accent Border */}
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#D4AF37] to-[#B8860B]"></div>
+
+            {/* Subtle Glow Backdrop */}
+            <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-[#D4AF37]/5 blur-3xl transition-all duration-500 group-hover:bg-[#D4AF37]/10"></div>
+
+            <div className="relative z-10 space-y-5">
+              <div className="flex items-center gap-4">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FAF8F3] border border-[#D4AF37]/20 shadow-sm text-[#B8860B]">
+                  <Car className="w-5 h-5" />
+                </span>
+                <h3 className="text-xl font-bold text-[#111111] tracking-tight">
+                  Need Reliable Patrol?
+                </h3>
+              </div>
+
+              <p className="leading-relaxed text-gray-500 text-[14px]">
+                Contact us today to schedule mobile patrol services tailored to
+                your property's security needs and risk level.
+              </p>
             </div>
 
-            <p className="leading-7 text-white/90 mb-8">
-              Contact us today to schedule mobile patrol services tailored to
-              your property's security needs and risk level.
-            </p>
-
-            <div className="text-center">
+            <div className="relative z-10 pt-6">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#005FCC] font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300"
+                className="group flex items-center justify-between gap-2 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B8860B] px-6 py-3.5 font-semibold text-white shadow-lg shadow-[#D4AF37]/10 hover:shadow-[#D4AF37]/20 hover:-translate-y-0.5 transition-all duration-300 w-full"
               >
-                <ArrowRight className="w-4 h-4" />
-                Obtain a Free Quote
+                <span className="text-sm tracking-wide shadow-sm">
+                  Obtain a Free Quote
+                </span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm transition-colors">
+                  <ArrowRight className="w-3.5 h-3.5 text-white group-hover:translate-x-0.5 transition-transform duration-300" />
+                </span>
               </a>
             </div>
           </div>
@@ -100,236 +141,205 @@ const MobilePatrol = () => {
       </section>
 
       {/* PROFESSIONAL MOBILE PATROL SECURITY */}
-      <section className="py-24 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 lg:py-24 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto space-y-24">
           {/* Top Row */}
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             {/* Left Image */}
-            <div>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl z-10 pointer-events-none"></div>
               <img
                 src="/About.png"
                 alt="Mobile Patrol Security"
-                className="w-full rounded-xl shadow-lg object-cover"
+                className="w-full rounded-2xl shadow-xl border border-gray-100 object-cover transform group-hover:scale-[1.01] transition-transform duration-500"
               />
             </div>
 
             {/* Right Content */}
-            <div>
-              <p className="text-[#005FCC] font-semibold uppercase tracking-wider mb-3">
-                Mobile Patrol Security
-              </p>
+            <div className="space-y-6">
+              <div>
+                <p className="text-[#B8860B] font-bold text-xs uppercase tracking-widest mb-2">
+                  Mobile Patrol Security
+                </p>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0A2540] leading-tight mb-6">
-                Fast & Reliable Mobile Patrol Security Services
-              </h2>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-[#111111] leading-tight">
+                  Fast & Reliable Mobile Patrol Security Services
+                </h2>
+              </div>
 
-              <p className="text-gray-700 text-lg leading-8 mb-3">
+              <p className="text-gray-600 text-lg leading-relaxed">
                 Our mobile patrol security services provide visible,
                 fast-response protection for properties that do not require
                 full-time on-site guards.
               </p>
 
-              <p className="text-gray-700 text-lg leading-8 mb-5">
+              <p className="text-gray-600 text-lg leading-relaxed">
                 We conduct scheduled and random patrols to deter crime, check
                 perimeters, and ensure your property remains safe 24/7.
               </p>
 
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <CheckCircle2
-                    size={20}
-                    className="text-[#005FCC] flex-shrink-0"
-                  />
-                  <span className="text-gray-700">
-                    Scheduled & Random Patrol Visits
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <CheckCircle2
-                    size={20}
-                    className="text-[#005FCC] flex-shrink-0"
-                  />
-                  <span className="text-gray-700">Alarm Response Support</span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <CheckCircle2
-                    size={20}
-                    className="text-[#005FCC] flex-shrink-0"
-                  />
-                  <span className="text-gray-700">
-                    Perimeter & Parking Lot Checks
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <CheckCircle2
-                    size={20}
-                    className="text-[#005FCC] flex-shrink-0"
-                  />
-                  <span className="text-gray-700">
-                    Incident Reporting with Updates
-                  </span>
-                </div>
+              <div className="grid sm:grid-cols-2 gap-4 pt-2">
+                {[
+                  "Scheduled & Random Patrol Visits",
+                  "Alarm Response Support",
+                  "Perimeter & Parking Lot Checks",
+                  "Incident Reporting with Updates",
+                ].map((text, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-start gap-3 p-3 rounded-xl bg-[#FAF8F3] border border-gray-100"
+                  >
+                    <CheckCircle2
+                      size={18}
+                      className="text-[#D4AF37] mt-0.5 flex-shrink-0"
+                    />
+                    <span className="text-gray-700 text-sm font-medium leading-tight">
+                      {text}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Bottom */}
-          <div className="border-t border-gray-200 pt-16">
-            <p className="text-[#005FCC] font-semibold uppercase tracking-wider mb-3">
-              Tailored Security Solutions
-            </p>
+          {/* Bottom Content */}
+          <div className="border-t border-gray-100 pt-20">
+            <div className="max-w-3xl mb-12">
+              <p className="text-[#B8860B] font-bold text-xs uppercase tracking-widest mb-2">
+                Tailored Security Solutions
+              </p>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0A2540] mb-6">
-              Customized Mobile Patrol Services
-            </h2>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#111111] mb-4">
+                Customized Mobile Patrol Services
+              </h2>
 
-            <p className="text-gray-700 text-lg leading-8 mb-4">
-              Western Eagle Security offers flexible mobile patrol solutions
-              designed for commercial properties, residential areas,
-              construction sites, and parking facilities across Alberta.
-            </p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Western Eagle Security offers flexible mobile patrol solutions
+                designed for commercial properties, residential areas,
+                construction sites, and parking facilities across Alberta.
+              </p>
 
-            <p className="text-gray-700 text-lg leading-8 mb-10">
-              Our patrol frequency is customized based on your risk level,
-              property size, and security requirements to ensure maximum
-              protection at all times.
-            </p>
-
-            {/* IMAGE PLACEHOLDER: swap src with a real photo of a patrol vehicle on the road or at a site */}
-            <div className="relative rounded-xl overflow-hidden shadow-lg h-64 md:h-80 mb-10">
-              <img
-                src="https://placehold.co/1600x500/0A2540/FFFFFF?text=Add+Patrol+Vehicle+Photo+Here"
-                alt="Mobile patrol vehicle on a scheduled property check"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/70 via-transparent to-transparent" />
-              <p className="absolute bottom-4 left-5 text-white font-semibold text-lg">
-                Always visible, always on schedule
+              <p className="text-gray-600 text-lg leading-relaxed mt-4">
+                Our patrol frequency is customized based on your risk level,
+                property size, and security requirements to ensure maximum
+                protection at all times.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="flex items-center gap-3">
-                <CheckCircle2
-                  size={20}
-                  className="text-[#005FCC] flex-shrink-0"
-                />
-                <span className="text-gray-700">Residential Communities</span>
+            {/* Showcase Image */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl h-80 md:h-[400px] mb-12 group border border-gray-100">
+              <img
+                src="https://placehold.co/1600x500/111111/FFFFFF?text=Add+Patrol+Vehicle+Photo+Here"
+                alt="Mobile patrol vehicle on a scheduled property check"
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="absolute bottom-6 left-6 md:left-10 text-white space-y-1">
+                <span className="px-3 py-1 text-[11px] font-semibold bg-[#D4AF37] text-black uppercase tracking-wider rounded-md">
+                  Vigilance On The Move
+                </span>
+                <p className="font-bold text-xl md:text-2xl mt-2">
+                  Always visible, always on schedule
+                </p>
               </div>
+            </div>
 
-              <div className="flex items-center gap-3">
-                <CheckCircle2
-                  size={20}
-                  className="text-[#005FCC] flex-shrink-0"
-                />
-                <span className="text-gray-700">Commercial Properties</span>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <CheckCircle2
-                  size={20}
-                  className="text-[#005FCC] flex-shrink-0"
-                />
-                <span className="text-gray-700">Construction Sites</span>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <CheckCircle2
-                  size={20}
-                  className="text-[#005FCC] flex-shrink-0"
-                />
-                <span className="text-gray-700">Parking Facilities</span>
-              </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                "Residential Communities",
+                "Commercial Properties",
+                "Construction Sites",
+                "Parking Facilities",
+              ].map((text, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-3 p-4 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <div className="p-1 rounded-full bg-[#D4AF37]/10">
+                    <CheckCircle2 size={16} className="text-[#B8860B]" />
+                  </div>
+                  <span className="text-gray-800 font-medium text-sm">
+                    {text}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* BENEFITS */}
-      <section className="py-24 px-6 md:px-12 bg-[#005FCC]/5">
+      <section className="py-24 px-6 md:px-12 bg-gradient-to-b from-[#FAF8F3]/50 via-[#FAF8F3] to-white border-y border-gray-100">
         <div className="max-w-7xl mx-auto">
           {/* Heading */}
-          <div className="text-center mb-14">
-            <p className="text-[#005FCC] font-semibold uppercase tracking-wider mb-3">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <p className="text-[#B8860B] font-bold text-xs uppercase tracking-widest mb-2">
               Why Choose Us
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540]">
-              Benefits of Choosing Us
+            <h2 className="text-4xl font-extrabold text-[#111111] tracking-tight">
+              Benefits of Choosing Our Team
             </h2>
           </div>
 
-          {/* Cards */}
+          {/* Cards Grid */}
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="group bg-white rounded-xl p-8 shadow-sm border-b-4 border-transparent hover:border-[#005FCC] hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <BadgeDollarSign size={30} className="text-[#005FCC]" />
+            {[
+              {
+                icon: <BadgeDollarSign size={26} />,
+                title: "Competitive Pricing",
+                text: "We provide professional mobile patrol services at competitive rates, delivering exceptional value without compromising on safety, reliability, or service quality.",
+              },
+              {
+                icon: <RefreshCcw size={26} />,
+                title: "Flexible Solutions",
+                text: "Every property has unique security requirements. We create customized patrol schedules that adapt to your property, risk level, and budget.",
+              },
+              {
+                icon: <Headset size={26} />,
+                title: "Exceptional Service",
+                text: "Our team builds lasting relationships through clear communication, responsive support, and a commitment to providing a professional experience for every client.",
+              },
+            ].map((benefit, idx) => (
+              <div
+                key={idx}
+                className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:border-transparent hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+              >
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D4AF37] to-[#B8860B] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-2xl"></div>
+                <div>
+                  <div className="w-14 h-14 rounded-xl bg-[#FAF8F3] border border-gray-100 flex items-center justify-center mb-6 text-[#B8860B] group-hover:bg-gradient-to-br group-hover:from-[#D4AF37] group-hover:to-[#B8860B] group-hover:text-white transition-all duration-300">
+                    {benefit.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-[#111111] mb-3">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    {benefit.text}
+                  </p>
+                </div>
               </div>
-
-              <h3 className="text-2xl font-bold text-[#0A2540] mb-4">
-                Competitive Pricing
-              </h3>
-
-              <p className="text-gray-600 leading-7">
-                We provide professional mobile patrol services at competitive
-                rates, delivering exceptional value without compromising on
-                safety, reliability, or service quality.
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="group bg-white rounded-xl p-8 shadow-sm border-b-4 border-transparent hover:border-[#005FCC] hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <RefreshCcw size={30} className="text-[#005FCC]" />
-              </div>
-
-              <h3 className="text-2xl font-bold text-[#0A2540] mb-4">
-                Flexible Solutions
-              </h3>
-
-              <p className="text-gray-600 leading-7">
-                Every property has unique security requirements. We create
-                customized patrol schedules that adapt to your property, risk
-                level, and budget.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="group bg-white rounded-xl p-8 shadow-sm border-b-4 border-transparent hover:border-[#005FCC] hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 rounded-full bg-[#005FCC]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Headset size={30} className="text-[#005FCC]" />
-              </div>
-
-              <h3 className="text-2xl font-bold text-[#0A2540] mb-4">
-                Exceptional Customer Service
-              </h3>
-
-              <p className="text-gray-600 leading-7">
-                Our team builds lasting relationships through clear
-                communication, responsive support, and a commitment to providing
-                a professional experience for every client.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="px-6 md:px-12 py-20 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="relative bg-[#4EA5FF] rounded-[32px] shadow-2xl px-8 md:px-14 py-5 md:py-12 overflow-hidden">
-            <Quote className="absolute top-6 left-6 md:left-10 w-16 h-16 text-white/25" />
+      <section className="px-6 md:px-12 py-24 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-b from-[#FAF8F3] to-white shadow-[0_20px_60px_rgba(212,175,55,0.08)] px-6 md:px-16 py-14 border border-[#D4AF37]/20">
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#D4AF37] to-[#B8860B]"></div>
 
-            <div className="text-center mb-12">
-              <p className="text-black font-semibold uppercase tracking-wider mb-2">
+            <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-[#D4AF37]/5 blur-2xl pointer-events-none"></div>
+            <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-[#B8860B]/5 blur-2xl pointer-events-none"></div>
+
+            <Quote className="absolute top-10 left-10 w-24 h-24 text-[#D4AF37]/10 pointer-events-none" />
+
+            <div className="relative z-10 text-center mb-10">
+              <span className="inline-block px-3 py-1 bg-[#D4AF37]/10 text-[#B8860B] text-[10px] font-bold uppercase tracking-widest rounded-full border border-[#D4AF37]/20">
                 Testimonials
-              </p>
+              </span>
 
-              <h2 className="text-4xl md:text-5xl font-bold text-black">
+              <h2 className="mt-4 text-3xl md:text-4xl font-extrabold text-[#111111] tracking-tight">
                 What Our Clients Say
               </h2>
             </div>
@@ -339,7 +349,7 @@ const MobilePatrol = () => {
               navigation
               pagination={{ clickable: true }}
               autoplay={{
-                delay: 5000,
+                delay: 5500,
                 disableOnInteraction: false,
               }}
               loop
@@ -347,28 +357,31 @@ const MobilePatrol = () => {
             >
               {testimonials.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <div className="max-w-3xl mx-auto text-center py-6">
-                    <div className="flex justify-center gap-1 mb-5">
+                  <div className="max-w-2xl mx-auto text-center pb-12 px-4">
+                    <div className="flex justify-center gap-1 mb-6">
                       {Array.from({ length: 5 }).map((_, i) => (
                         <Star
                           key={i}
-                          size={18}
-                          className="fill-amber-400 text-amber-400"
+                          size={16}
+                          className="fill-[#D4AF37] text-[#D4AF37]"
                         />
                       ))}
                     </div>
 
-                    <p className="text-black text-xl md:text-2xl leading-relaxed">
+                    <p className="text-gray-700 text-lg md:text-xl font-medium leading-relaxed italic">
                       "{item.text}"
                     </p>
 
-                    <div className="mt-8 flex flex-col items-center gap-3">
-                      <div className="w-14 h-14 rounded-full bg-[#0A2540] text-white flex items-center justify-center font-bold text-lg shadow-md">
+                    <div className="mt-8 flex flex-col items-center">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8860B] text-white font-bold text-sm shadow-md shadow-[#D4AF37]/20">
                         {getInitials(item.name)}
                       </div>
-                      <h4 className="text-black text-2xl font-semibold">
+                      <h4 className="mt-3 text-base font-bold text-[#111111]">
                         {item.name}
                       </h4>
+                      <span className="text-xs text-gray-400 mt-0.5 font-medium">
+                        Verified Property Partner
+                      </span>
                     </div>
                   </div>
                 </SwiperSlide>
