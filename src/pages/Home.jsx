@@ -90,62 +90,53 @@ const Home = () => {
   return (
     <div className="m-0 p-0 bg-black">
       {/* HERO SECTION */}
-      <section className="relative min-h-screen  overflow-hidden flex items-center bg-[#050505]">
-        {/* Background */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-transparent">
+        {/* Background Image */}
         <div className="absolute inset-0">
-          <div
-            className="hidden md:block w-full h-full bg-cover bg-center scale-105"
-            style={{
-              backgroundImage: "url('/hero.png')",
-            }}
+          <img
+            src="/herosection.png"
+            alt="Western Eagle Security"
+            className="w-full h-full object-cover mr-11 object-right scale-110 opacity-100"
           />
 
-          <div
-            className="md:hidden w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: "url('/mobile.heroo.jpg')",
-            }}
-          />
+          {/* White Overlay */}
+          <div className="absolute inset-0 bg-white/45"></div>
+
+          {/* Left Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/55 to-transparent"></div>
+
+          {/* Soft Gold Glow */}
+          <div className="absolute inset-0 bg-[#D4AF37]/5"></div>
         </div>
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/80 to-black/40" />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
-
-        {/* Gold Glow */}
-        <div className="absolute top-40 -left-20 w-80 h-80 bg-[#D4AF37]/10 blur-[120px]" />
-
-        <div className="absolute bottom-20 right-0 w-96 h-96 bg-[#D4AF37]/5 blur-[140px]" />
+        {/* Decorative Glow */}
+        <div className="absolute -top-32 -left-24 w-96 h-96 rounded-full bg-[#D4AF37]/10 blur-[140px]" />
+        <div className="absolute bottom-0 right-0 w-[450px] h-[450px] rounded-full bg-[#D4AF37]/10 blur-[150px]" />
 
         {/* Content */}
-        <div className="relative max-w-7xl mt-14 mx-auto px-6 lg:px-10 w-full">
-          <div className="max-w-4xl">
+        <div className="relative z-10 md:mt-10  mt-6  max-w-7xl mx-auto px-6 lg:px-12 w-full">
+          <div className="max-w-3xl">
             {/* Badge */}
-
-            <span className="inline-flex items-center rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-5 py-2 text-xs md:text-sm uppercase tracking-[0.25em] text-[#D4AF37] font-semibold">
+            <span className="inline-flex items-center rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-5 py-2 text-xs md:text-sm uppercase tracking-[0.22em] text-[#D4AF37] font-semibold backdrop-blur-sm">
               Construction Security
-              <span className="mx-3 text-[#D4AF37]/60">•</span>
+              <span className="mx-3 text-[#D4AF37]">•</span>
               Mobile Patrol
-              <span className="mx-3 text-[#D4AF37]/60">•</span>
+              <span className="mx-3 text-[#D4AF37]">•</span>
               Concierge
             </span>
 
             {/* Heading */}
-
-            <h1 className="mt-8 font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] text-white">
+            <h1 className="mt-8 font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] text-[#111111]">
               Professional
               <span className="block text-[#D4AF37]">Security Services</span>
               For Every Industry
             </h1>
 
-            {/* Gold Line */}
-
-            <div className="mt-8 w-32 h-1 rounded-full bg-[#D4AF37]" />
+            {/* Divider */}
+            <div className="mt-8 w-24 h-[3px] rounded-full bg-[#D4AF37]" />
 
             {/* Paragraph */}
-
-            <p className="mt-8 text-lg lg:text-xl text-gray-300 leading-8 max-w-2xl">
+            <p className="mt-8 max-w-2xl text-lg lg:text-xl leading-8 text-gray-700">
               Western Eagle Security provides licensed security guards, mobile
               patrol services, concierge security, and construction site
               protection across Alberta with a commitment to safety,
@@ -153,19 +144,20 @@ const Home = () => {
             </p>
 
             {/* Buttons */}
-
-            <div className="mt-10 flex mb-20 flex-wrap gap-5">
+            <div className="mt-10 flex mb-6 flex-wrap gap-5">
               <a
                 href="/contact"
-                className="inline-flex items-center gap-3 rounded-lg bg-[#D4AF37] px-8 py-4 font-bold text-black transition-all duration-300 hover:scale-105 hover:bg-[#E8C766] shadow-[0_10px_35px_rgba(212,175,55,.35)]"
+                className="inline-flex items-center gap-3 rounded-xl bg-[#D4AF37] px-8 py-4 font-bold text-black transition-all duration-300 hover:bg-[#E8C766] hover:-translate-y-1 shadow-lg"
               >
                 Contact Us
                 <ArrowRight className="w-5 h-5" />
               </a>
 
               <a
-                href="tel:5876647683"
-                className="inline-flex items-center gap-3 rounded-lg border border-[#D4AF37] px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-[#D4AF37] hover:text-black"
+                href="https://wa.me/15876647683"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 rounded-xl border border-[#D4AF37] bg-white px-8 py-4 font-semibold text-[#111111] transition-all duration-300 hover:bg-[#D4AF37] hover:text-black shadow-md"
               >
                 <Phone className="w-5 h-5" />
                 Call Now
@@ -175,25 +167,26 @@ const Home = () => {
         </div>
 
         {/* Scroll Indicator */}
-
         <div className="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center">
-          <span className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-3">
+          <span className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-3">
             Scroll
           </span>
 
-          <div className="w-[2px] h-14 bg-gradient-to-b from-[#D4AF37] to-transparent" />
+          <div className="w-[2px] h-14 bg-gradient-to-b from-[#D4AF37] to-transparent"></div>
         </div>
       </section>
 
       {/* CREDENTIALS BAR */}
-      <section className="bg-[#0B0B0C] border-y border-white/10 py-7 px-6 md:px-12">
+      <section className="bg-[#FCFCFC] border-y border-[#D4AF37]/20 py-7 px-6 md:px-12">
         <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
           {credentials.map((item, i) => {
             const Icon = item.icon;
+
             return (
-              <div key={i} className="flex items-center gap-2 text-white/80">
+              <div key={i} className="flex items-center gap-3 text-[#111111]">
                 <Icon className="w-5 h-5 text-[#D4AF37]" />
-                <span className="text-sm md:text-base font-medium tracking-wide">
+
+                <span className="text-sm md:text-base font-medium">
                   {item.label}
                 </span>
               </div>
