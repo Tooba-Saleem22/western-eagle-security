@@ -203,18 +203,18 @@ const Home = () => {
       </section>
 
       {/* ABOUT OUR COMPANY SECTION */}
-      <section className="w-full py-24 px-6 md:px-12 bg-black">
+      <section className="w-full py-24 px-6 md:px-12 bg-white">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1">
             <p className="text-[#D4AF37] font-semibold uppercase tracking-[0.2em] text-sm mb-3">
               Who We Are
             </p>
 
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-black mb-6">
               About <span className="text-[#D4AF37]">Our Company</span>
             </h2>
 
-            <p className="text-white/70 text-lg mb-6 leading-relaxed">
+            <p className="text-black/80 text-lg mb-6 leading-relaxed">
               At Western Eagle Security, we provide comprehensive, professional
               security solutions meticulously tailored to your specific
               operational needs. Our commitment to safety and service excellence
@@ -222,7 +222,7 @@ const Home = () => {
               protected under the watch of highly trained industry experts.
             </p>
 
-            <p className="text-white/70 text-lg mb-8 leading-relaxed">
+            <p className="text-black/80 text-lg mb-8 leading-relaxed">
               We understand that every business faces unique challenges. By
               integrating advanced surveillance technology, data-driven risk
               assessment, and proactive on-site support, we deliver a robust
@@ -234,21 +234,21 @@ const Home = () => {
             <div className="flex gap-10 md:gap-12 pt-6 border-t border-white/10">
               <div>
                 <Briefcase className="w-6 h-6 text-[#D4AF37] mb-2" />
-                <h3 className="text-4xl font-bold text-white">250+</h3>
+                <h3 className="text-3xl font-bold text-black">250+</h3>
                 <p className="text-sm mt-2 font-semibold text-[#D4AF37] uppercase tracking-wide">
                   Project Done
                 </p>
               </div>
               <div>
                 <Users className="w-6 h-6 text-[#D4AF37] mb-2" />
-                <h3 className="text-4xl font-bold text-white">280+</h3>
+                <h3 className="text-3xl font-bold text-black">280+</h3>
                 <p className="text-sm mt-2 font-semibold text-[#D4AF37] uppercase tracking-wide">
                   Happy Client
                 </p>
               </div>
               <div>
                 <ShieldCheck className="w-6 h-6 text-[#D4AF37] mb-2" />
-                <h3 className="text-4xl font-bold text-white">240+</h3>
+                <h3 className="text-3xl font-bold text-black">240+</h3>
                 <p className="text-sm mt-2 font-semibold text-[#D4AF37] uppercase tracking-wide">
                   Our Employees
                 </p>
@@ -261,7 +261,7 @@ const Home = () => {
             <img
               src="/About.png"
               alt="Security"
-              className="relative z-10 w-full h-auto rounded-sm shadow-2xl shadow-black/60"
+              className="relative z-10 w-full h-auto"
             />
           </div>
         </div>
@@ -271,13 +271,13 @@ const Home = () => {
       <Services />
 
       {/* WHY CHOOSE US */}
-      <section className="relative w-full bg-[#0B0B0C] py-24 px-6 md:px-12 overflow-hidden">
+      <section className="relative w-full bg-white py-24 px-6 md:px-12 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-[#D4AF37] font-semibold uppercase tracking-[0.2em] text-sm mb-3">
               Why Choose Us
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-black">
               Trusted Security Professionals
             </h2>
           </div>
@@ -288,15 +288,15 @@ const Home = () => {
               return (
                 <div
                   key={i}
-                  className="group bg-[#141414] border border-white/10 rounded-xl p-7 hover:border-[#D4AF37]/60 transition-all duration-300"
+                  className="group bg-white border border-black/15 rounded-xl p-7 hover:border-[#D4AF37]/60 transition-all duration-300"
                 >
-                  <div className="w-14 h-14 rounded-full bg-[#D4AF37]/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                     <Icon className="w-6 h-6 text-[#D4AF37]" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">
+                  <h3 className="text-lg font-bold text-black mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-white/60 text-sm leading-relaxed">
+                  <p className="text-black/60 text-sm leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -305,48 +305,75 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* OUR PROCESS SECTION */}
-      <section className="relative w-full bg-black py-24 px-6 md:px-24 overflow-hidden">
-        <ShieldWatermark className="hidden lg:block absolute -left-16 -bottom-16 w-80 h-auto opacity-[0.06] -z-0" />
+      <section className="relative w-full bg-white py-24 px-6 md:px-24 overflow-hidden">
+        <ShieldWatermark className="hidden lg:block absolute -left-20 -bottom-20 w-80 h-auto opacity-[0.05]" />
 
-        <div className="relative flex flex-col md:flex-row gap-16">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
+          {/* Left Side */}
           <div className="flex-1">
-            <p className="text-[#D4AF37] font-semibold mb-4 uppercase tracking-[0.2em] text-sm">
+            <span className="inline-block px-5 py-2 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] uppercase tracking-[0.2em] text-xs font-semibold">
               Our Process
-            </p>
-            <h2 className="font-serif text-4xl font-bold text-white mb-6">
-              One smart approach. Four steps.
+            </span>
+
+            <h2 className="mt-6 text-4xl md:text-5xl font-bold text-[#111111] font-serif leading-tight">
+              One Smart Process.
+              <br />
+              Four Simple Steps.
             </h2>
-            <p className="text-white/60 mb-10">
-              Tailored solutions for your business security needs.
+
+            <p className="mt-6 text-gray-600 text-lg leading-8 max-w-lg">
+              We follow a simple and transparent process to understand your
+              security requirements and deliver the right protection for your
+              business or property.
             </p>
 
-            {/* IMAGE PLACEHOLDER: swap src with a real photo of your team/patrol */}
-            <div className="hidden md:block p-1 bg-gradient-to-br from-[#D4AF37] to-[#8B6914] rounded-lg max-w-sm">
+            {/* Replace image later */}
+            <div className="hidden md:block mt-10 overflow-hidden rounded-2xl border-4 border-[#D4AF37]/20 shadow-xl">
               <img
-                src="https://placehold.co/700x500/0B0B0C/D4AF37?text=Add+Team+Photo+Here"
-                alt="Western Eagle Security team on assignment"
-                className="w-full h-56 object-cover rounded-md"
+                src="https://placehold.co/700x500/f8f8f8/D4AF37?text=Your+Security+Image"
+                alt="Our Process"
+                className="w-full h-72 object-cover hover:scale-105 transition duration-500"
               />
             </div>
           </div>
 
-          <div className="flex-1 border-l-2 border-white/10 pl-8 space-y-12">
-            {processSteps.map((step, i) => {
-              const Icon = step.icon;
-              return (
-                <div key={i} className="relative">
-                  <div className="absolute -left-[52px] top-0 w-10 h-10 rounded-full bg-black border-2 border-[#D4AF37] flex items-center justify-center shadow-sm">
-                    <Icon className="w-5 h-5 text-[#D4AF37]" />
+          {/* Right Side */}
+          <div className="flex-1 relative">
+            {/* Timeline */}
+            <div className="absolute left-5 top-4 bottom-4 w-[2px] bg-[#D4AF37]/30"></div>
+
+            <div className="space-y-10">
+              {processSteps.map((step, i) => {
+                const Icon = step.icon;
+
+                return (
+                  <div key={i} className="relative flex gap-6 group">
+                    {/* Icon */}
+                    <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-[#D4AF37] flex items-center justify-center shadow-lg">
+                      <Icon size={22} className="text-black" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="pb-2">
+                      <span className="text-[#D4AF37] font-bold text-sm tracking-widest">
+                        STEP 0{i + 1}
+                      </span>
+
+                      <h3 className="mt-2 text-2xl font-bold text-[#111111]">
+                        {step.title}
+                      </h3>
+
+                      <p className="mt-2 text-gray-600 leading-7">
+                        We ensure every step is handled professionally to
+                        deliver reliable security services tailored to your
+                        needs.
+                      </p>
+                    </div>
                   </div>
-                  <div className="text-[#D4AF37] font-bold text-xl">
-                    0{i + 1}
-                  </div>
-                  <h3 className="text-xl font-bold text-white">{step.title}</h3>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
@@ -354,88 +381,123 @@ const Home = () => {
       <GoldDivider />
 
       {/* CAREERS SECTION */}
-      <section className="w-full py-24 px-6 md:px-12 bg-[#0B0B0C]">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row-reverse items-center gap-12">
+      <section className="w-full bg-white py-24 px-6 md:px-12 overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-20">
+          {/* Content */}
           <div className="flex-1">
-            <span className="inline-block bg-[#D4AF37]/10 text-[#D4AF37] text-xs font-semibold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full mb-4">
+            <span className="inline-block px-5 py-2 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] uppercase tracking-[0.2em] text-xs font-semibold">
               We're Hiring
             </span>
 
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6">
-              Build a Career in Security
+            <h2 className="mt-6 text-4xl md:text-5xl font-bold text-[#111111] font-serif leading-tight">
+              Build Your Career
+              <span className="text-[#D4AF37]"> With Us</span>
             </h2>
 
-            <p className="text-white/70 text-lg leading-relaxed mb-8">
-              Western Eagle Security is always looking for licensed, reliable,
-              and professional guards to join our growing team across Alberta.
-              If you're dependable, alert, and take pride in protecting people
-              and property, we want to hear from you.
+            <div className="w-24 h-1 rounded-full bg-[#D4AF37] mt-6 mb-8"></div>
+
+            <p className="text-gray-600 text-lg leading-8 mb-10">
+              Western Eagle Security is looking for professional, dependable,
+              and motivated security personnel. If you're passionate about
+              protecting people and property, we'd love to hear from you.
             </p>
 
-            <ul className="space-y-3 mb-9">
+            <div className="grid sm:grid-cols-2 gap-4 mb-10">
               {careerPoints.map((point, i) => (
-                <li key={i} className="flex items-center gap-3 text-white/80">
+                <div
+                  key={i}
+                  className="flex items-center gap-3 rounded-xl border border-[#D4AF37]/15 bg-[#FAFAFA] p-4 hover:border-[#D4AF37]/40 transition"
+                >
                   <CheckCircle2 className="w-5 h-5 text-[#D4AF37] flex-shrink-0" />
-                  {point}
-                </li>
+                  <span className="text-[#222] font-medium">{point}</span>
+                </div>
               ))}
-            </ul>
+            </div>
 
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 px-7 py-3 bg-[#D4AF37] text-black font-semibold hover:bg-[#E8C766] transition"
+              className="inline-flex items-center gap-3 rounded-xl bg-[#D4AF37] px-8 py-4 text-black font-bold hover:bg-[#E8C766] transition-all duration-300 shadow-lg shadow-[#D4AF37]/20"
             >
-              <Briefcase className="w-4 h-4" />
-              Contact Us About Careers
+              <Briefcase className="w-5 h-5" />
+              Apply Today
             </a>
           </div>
 
+          {/* Image */}
           <div className="flex-1 relative">
-            <div className="absolute -bottom-6 -right-6 w-full h-full bg-gradient-to-br from-[#D4AF37] to-[#8B6914] -z-10"></div>
-            {/* IMAGE PLACEHOLDER: swap src with a real photo of your guards/team */}
+            {/* Gold Border */}
+            <div className="absolute -bottom-5 -right-5 w-full h-full rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#A67C00]"></div>
+
             <img
-              src="https://placehold.co/700x600/000000/D4AF37?text=Add+Careers+Photo+Here"
-              alt="Join the Western Eagle Security team"
-              className="relative z-10 w-full h-auto rounded-sm shadow-2xl shadow-black/60"
+              src="https://placehold.co/700x650/F8F8F8/D4AF37?text=Careers+Image"
+              alt="Careers"
+              className="relative z-10 w-full rounded-2xl shadow-2xl object-cover"
             />
+
+            {/* Floating Card */}
+            <div className="absolute bottom-6 left-6 bg-white rounded-xl shadow-xl border border-[#D4AF37]/20 px-6 py-4">
+              <p className="text-sm text-gray-500 uppercase tracking-wider">
+                Hiring Across
+              </p>
+
+              <h4 className="text-xl font-bold text-[#111111]">Alberta</h4>
+            </div>
           </div>
         </div>
       </section>
-
       {/* IMAGE SECTION */}
-      <section className="w-full pt-16 pb-24 px-6 bg-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-[#D4AF37] font-semibold uppercase tracking-[0.2em] text-sm mb-3">
+      <section className="w-full bg-white py-24 px-6 overflow-hidden">
+        <div className="max-w-6xl mx-auto text-center">
+          {/* Heading */}
+          <span className="inline-block px-5 py-2 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] uppercase tracking-[0.18em] text-xs font-semibold">
             Trusted Protection
-          </p>
+          </span>
 
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-white mb-6">
-            We Make Your World a Safer Place.
+          <h2 className="mt-6 text-4xl md:text-5xl font-bold text-[#111111] font-serif leading-tight">
+            We Make Your World
+            <span className="text-[#D4AF37]"> A Safer Place.</span>
           </h2>
 
-          <p className="text-white/70 text-lg mb-12">
-            Benefit from Western Eagle Security, a trusted Canadian partner.
+          <div className="mt-5 mb-8 flex justify-center">
+            <div className="w-14 h-[2px] rounded-full bg-[#D4AF37]"></div>
+          </div>
+
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-8 mb-16">
+            Benefit from Western Eagle Security, a trusted Canadian partner
+            delivering dependable protection, professional service, and complete
+            peace of mind.
           </p>
 
-          <div className="relative">
-            <div className="p-1.5 bg-gradient-to-br from-[#D4AF37] to-[#8B6914] rounded-xl">
-              <img
-                src="/centerimg.png"
-                alt="Operations"
-                className="w-full h-auto rounded-lg shadow-2xl"
-              />
-            </div>
+          {/* Image */}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Gold Frame */}
+            <div className="absolute -bottom-5 -right-5 w-full h-full rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#A67C00]"></div>
 
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-[#0B0B0C] border border-[#D4AF37]/30 rounded-full shadow-xl px-6 py-3 flex items-center gap-2 whitespace-nowrap">
-              <ShieldCheck className="w-5 h-5 text-[#D4AF37]" />
-              <span className="font-semibold text-white text-sm">
-                Licensed & Insured Across Alberta
-              </span>
+            <img
+              src="/centerimg.png"
+              alt="Western Eagle Security"
+              className="relative z-10 w-full rounded-2xl shadow-2xl object-cover"
+            />
+
+            {/* Floating Badge */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white border border-[#D4AF37]/20 rounded-2xl shadow-xl px-8 py-5 flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-[#D4AF37]/10 flex items-center justify-center">
+                <ShieldCheck className="w-6 h-6 text-[#D4AF37]" />
+              </div>
+
+              <div className="text-left">
+                <p className="text-xs uppercase tracking-widest text-gray-500">
+                  Certified Protection
+                </p>
+
+                <h4 className="font-bold text-[#111111]">
+                  Licensed & Insured Across Alberta
+                </h4>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
       <ContactFAQ />
       <CareersCTA />
     </div>
