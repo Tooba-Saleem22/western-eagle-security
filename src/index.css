@@ -1,3 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ===== INDUSTRIES SWIPER ===== */
+
+.industrySwiper {
+  overflow: visible;
+  padding-bottom: 70px;
+}
+
+.industrySwiper .swiper-pagination {
+  bottom: 5px !important;
+}
+
+.industrySwiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #d4af37;
+  opacity: 0.25;
+  transition: 0.35s;
+}
+
+.industrySwiper .swiper-pagination-bullet-active {
+  width: 34px;
+  border-radius: 999px;
+  opacity: 1;
+  background: #d4af37;
+}
+
+/* ===========================
+   TESTIMONIAL SLIDER
+=========================== */
+
+/* Arrows */
+.testimonialSwiper .swiper-button-next,
+.testimonialSwiper .swiper-button-prev {
+  color: #d4af37 !important;
+  width: 38px;
+  height: 38px;
+}
+
+.testimonialSwiper .swiper-button-next::after,
+.testimonialSwiper .swiper-button-prev::after {
+  font-size: 18px !important;
+  font-weight: 700;
+}
+
+/* Hover */
+.testimonialSwiper .swiper-button-next:hover,
+.testimonialSwiper .swiper-button-prev:hover {
+  transform: scale(1.1);
+}
+
+/* Pagination Dots */
+.testimonialSwiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #d4af37 !important;
+  opacity: 0.35;
+}
+
+.testimonialSwiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 28px;
+  border-radius: 999px;
+  background: #d4af37 !important;
+}

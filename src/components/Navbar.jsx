@@ -1,20 +1,35 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef(null);
   const closeMenu = () => {
     setIsOpen(false);
     setMobileServicesOpen(false);
+    setServicesOpen(false);
   };
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
     return () => (document.body.style.overflow = "auto");
   }, [isOpen]);
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target)) {
+        setServicesOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -48,32 +63,46 @@ const Navbar = () => {
 
               {/* Services */}
               <div className="relative group">
-                <button className="flex items-center gap-1 font-semibold text-black hover:text-[#D4AF37]">
-                  Services
-                  <ChevronDown
-                    size={18}
-                    className="group-hover:rotate-180 transition"
-                  />
-                </button>
+                <div className="relative" ref={servicesRef}>
+                  <button
+                    onClick={() => setServicesOpen(!servicesOpen)}
+                    className="flex items-center gap-1 font-semibold text-black hover:text-[#D4AF37]"
+                  >
+                    Services
+                    <ChevronDown
+                      size={18}
+                      className={`transition-transform duration-300 ${
+                        servicesOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
 
-                <div className="absolute left-0 top-full mt-3 w-72 rounded-xl bg-white border border-[#D4AF37]/40 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition overflow-hidden">
-                  {[
-                    ["Static Security Guard", "/services/static-security"],
-                    [
-                      "Construction Site Security",
-                      "/services/construction-security",
-                    ],
-                    ["Concierge Security", "/services/concierge-security"],
-                    ["Mobile Patrol Services", "/services/mobile-patrol"],
-                  ].map(([label, path]) => (
-                    <Link
-                      key={path}
-                      to={path}
-                      className="block px-5 py-3 text-black hover:bg-[#D4AF37] hover:text-white transition"
-                    >
-                      {label}
-                    </Link>
-                  ))}
+                  <div
+                    className={`absolute left-0 top-full mt-3 w-72 rounded-xl bg-white border border-[#D4AF37]/40 shadow-xl overflow-hidden transition-all duration-300 ${
+                      servicesOpen
+                        ? "opacity-100 visible translate-y-0"
+                        : "opacity-0 invisible -translate-y-2"
+                    }`}
+                  >
+                    {[
+                      ["Static Security Guard", "/services/static-security"],
+                      [
+                        "Construction Site Security",
+                        "/services/construction-security",
+                      ],
+                      ["Concierge Security", "/services/concierge-security"],
+                      ["Mobile Patrol Services", "/services/mobile-patrol"],
+                    ].map(([label, path]) => (
+                      <Link
+                        key={path}
+                        to={path}
+                        onClick={closeMenu}
+                        className="block px-5 py-3 text-black hover:bg-[#D4AF37] hover:text-white transition"
+                      >
+                        {label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
 

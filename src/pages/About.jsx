@@ -21,11 +21,18 @@ import {
   Clock,
 } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import {
+  Navigation,
+  Pagination,
+  Autoplay,
+  EffectCoverflow,
+} from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
 
 const testimonials = [
   {
@@ -156,20 +163,25 @@ const About = () => {
   return (
     <div className="w-full bg-black">
       {/* HERO SECTION */}
-      <section className="relative py-24 px-6 md:px-12 bg-black overflow-hidden">
-        <ShieldWatermark className="hidden lg:block absolute -right-12 -top-12 w-72 h-auto opacity-[0.06] -z-0" />
+      <section className="relative py-24 px-6 md:px-12 bg-[#FAF8F3] overflow-hidden">
+        {/* Background Glow */}
+        <div className="absolute -top-32 -right-20 w-[420px] h-[420px] rounded-full bg-[#D4AF37]/10 blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full bg-[#D4AF37]/5 blur-3xl" />
+
+        <ShieldWatermark className="hidden lg:block absolute -right-12 -top-12 w-72 h-auto opacity-[0.05]" />
 
         <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
           <div>
-            <p className="uppercase tracking-[0.2em] text-[#D4AF37] font-semibold mb-4 text-sm">
+            <p className="uppercase tracking-[0.2em] text-[#B8860B] font-semibold mb-4 text-sm">
               About Western Eagle Security
             </p>
 
-            <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight text-white mb-6">
+            <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight text-[#111111] mb-6">
               Protecting Alberta's Businesses, Properties, and Communities
             </h1>
 
-            <p className="text-lg text-white/70 leading-relaxed mb-8">
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
               Western Eagle Security delivers professional, reliable, and
               customized security services designed to safeguard people,
               properties, and assets across Alberta.
@@ -177,26 +189,33 @@ const About = () => {
 
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 bg-[#D4AF37] text-black font-semibold px-7 py-3 hover:bg-[#E8C766] transition shadow-lg shadow-black/40"
+              className="inline-flex items-center gap-2 bg-[#D4AF37] text-black font-semibold px-7 py-3 rounded-full hover:bg-[#C89D22] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               Request a Free Quote
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>
 
+          {/* Right Image */}
           <div className="relative">
+            {/* Golden Border */}
+            <div className="absolute -bottom-5 -right-5 w-full h-full border-2 border-[#D4AF37]/30 rounded-2xl"></div>
+
             <img
               src="/About.png"
               alt="Western Eagle Security"
-              className="w-full rounded-xl shadow-2xl shadow-black/70"
+              className="relative w-full rounded-2xl shadow-2xl"
             />
-            <div className="absolute -bottom-6 -left-6 bg-[#141414] rounded-xl shadow-xl px-6 py-4 flex items-center gap-3 border border-[#D4AF37]/30">
-              <span className="bg-[#D4AF37]/10 rounded-full p-2">
+
+            {/* Floating Card */}
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl px-6 py-4 flex items-center gap-3 border border-[#D4AF37]/20">
+              <span className="bg-[#D4AF37]/10 rounded-full p-3">
                 <ShieldCheck className="w-6 h-6 text-[#D4AF37]" />
               </span>
+
               <div>
-                <p className="text-sm text-white/50">Licensed & Insured</p>
-                <p className="font-bold text-white">Across Alberta</p>
+                <p className="text-sm text-gray-500">Licensed & Insured</p>
+                <p className="font-bold text-[#111111]">Across Alberta</p>
               </div>
             </div>
           </div>
@@ -204,18 +223,20 @@ const About = () => {
       </section>
 
       {/* TRUST / STATS STRIP */}
-      <section className="bg-[#0B0B0C] border-y border-white/10 py-10 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+      <section className="bg-[#FAF8F3]  border-y border-[#D4AF37]/20 py-10 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-[#111111]">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
             return (
               <div
                 key={idx}
-                className="flex flex-col items-center gap-2 md:border-l first:border-l-0 border-white/10 px-2"
+                className="flex flex-col items-center gap-2 md:border-l first:border-l-0 border-[#D4AF37]/20 px-2"
               >
                 <Icon className="w-7 h-7 text-[#D4AF37] mb-1" />
-                <p className="text-2xl md:text-3xl font-bold">{stat.value}</p>
-                <p className="text-white/60 text-sm">{stat.label}</p>
+                <p className="text-2xl md:text-3xl font-bold text-[#111111]">
+                  {stat.value}
+                </p>
+                <p className="text-gray-600 text-sm">{stat.label}</p>
               </div>
             );
           })}
@@ -223,13 +244,13 @@ const About = () => {
       </section>
 
       {/* WHO WE ARE */}
-      <section className="py-24 px-6 md:px-12 bg-black">
+      <section className="py-24 px-6 md:px-12 bg-[#FAF8F3]">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
           <div>
             <img
               src="/About.png"
               alt="Western Eagle Security"
-              className="w-full rounded-xl shadow-xl shadow-black/60"
+              className="w-full rounded-xl shadow-xl shadow-[#D4AF37]/10 border border-[#D4AF37]/20"
             />
           </div>
 
@@ -238,18 +259,18 @@ const About = () => {
               Who We Are
             </p>
 
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#111111] mb-6">
               Security You Can Depend On
             </h2>
 
-            <p className="text-white/70 text-lg leading-relaxed mb-5">
+            <p className="text-gray-600 text-lg leading-relaxed mb-5">
               Western Eagle Security is a trusted provider of professional
               security services throughout Alberta. We specialize in delivering
               customized protection solutions for commercial properties,
               construction sites, residential communities, and private clients.
             </p>
 
-            <p className="text-white/70 text-lg leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed">
               Our team is committed to maintaining the highest standards of
               professionalism, reliability, and customer service. We work
               closely with every client to understand their unique security
@@ -259,9 +280,8 @@ const About = () => {
           </div>
         </div>
       </section>
-
       {/* MISSION • VISION • CORE VALUES */}
-      <section className="bg-[#0B0B0C] py-24 px-6 md:px-12">
+      <section className="bg-[#FAF8F3] py-24 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           {/* Heading */}
           <div className="text-center mb-16">
@@ -269,11 +289,11 @@ const About = () => {
               Mission • Vision • Values
             </p>
 
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-5">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#111111] mb-5">
               What Drives Our Commitment
             </h2>
 
-            <p className="max-w-3xl mx-auto text-lg text-white/70 leading-relaxed">
+            <p className="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
               At Western Eagle Security, we are committed to protecting people,
               businesses, and communities through trusted security services
               built on professionalism, integrity, and excellence.
@@ -283,22 +303,22 @@ const About = () => {
           {/* Cards */}
           <div className="grid md:grid-cols-3 gap-8">
             {/* Mission */}
-            <div className="group bg-[#141414] rounded-xl border border-white/10 p-8 hover:border-[#D4AF37]/50 hover:-translate-y-1 transition-all duration-300">
+            <div className="group bg-white rounded-xl border border-[#D4AF37]/20 p-8 shadow-md hover:shadow-xl hover:border-[#D4AF37]/60 hover:-translate-y-1 transition-all duration-300">
               <div className="w-14 h-14 rounded-full bg-[#D4AF37]/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                 <Target size={28} className="text-[#D4AF37]" />
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-3">
+              <h3 className="text-2xl font-bold text-[#111111] mb-3">
                 Our Mission
               </h3>
 
-              <p className="text-white/60 leading-relaxed mb-4">
+              <p className="text-gray-600 leading-relaxed mb-4">
                 To provide dependable security services that protect people,
                 properties, and assets while maintaining the highest standards
                 of professionalism and accountability.
               </p>
 
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-gray-600">
                 {[
                   "Reliable Security Solutions",
                   "Professional Guard Services",
@@ -317,20 +337,22 @@ const About = () => {
             </div>
 
             {/* Vision */}
-            <div className="group bg-[#141414] rounded-xl border border-white/10 p-8 hover:border-[#D4AF37]/50 hover:-translate-y-1 transition-all duration-300">
+            <div className="group bg-white rounded-xl border border-[#D4AF37]/20 p-8 shadow-md hover:shadow-xl hover:border-[#D4AF37]/60 hover:-translate-y-1 transition-all duration-300">
               <div className="w-14 h-14 rounded-full bg-[#D4AF37]/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                 <Eye size={28} className="text-[#D4AF37]" />
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-3">Our Vision</h3>
+              <h3 className="text-2xl font-bold text-[#111111] mb-3">
+                Our Vision
+              </h3>
 
-              <p className="text-white/60 leading-relaxed mb-4">
+              <p className="text-gray-600 leading-relaxed mb-4">
                 To become Alberta's most trusted security company by delivering
                 innovative and client-focused security solutions that
                 consistently exceed expectations.
               </p>
 
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-gray-600">
                 {[
                   "Industry Leadership",
                   "Continuous Improvement",
@@ -349,22 +371,22 @@ const About = () => {
             </div>
 
             {/* Core Values */}
-            <div className="group bg-[#141414] rounded-xl border border-white/10 p-8 hover:border-[#D4AF37]/50 hover:-translate-y-1 transition-all duration-300">
+            <div className="group bg-white rounded-xl border border-[#D4AF37]/20 p-8 shadow-md hover:shadow-xl hover:border-[#D4AF37]/60 hover:-translate-y-1 transition-all duration-300">
               <div className="w-14 h-14 rounded-full bg-[#D4AF37]/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                 <ShieldCheck size={28} className="text-[#D4AF37]" />
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-3">
+              <h3 className="text-2xl font-bold text-[#111111] mb-3">
                 Our Core Values
               </h3>
 
-              <p className="text-white/60 leading-relaxed mb-4">
+              <p className="text-gray-600 leading-relaxed mb-4">
                 We believe trust is earned through integrity, professionalism,
                 and a commitment to delivering dependable security services
                 every day.
               </p>
 
-              <ul className="space-y-2 text-white/70">
+              <ul className="space-y-2 text-gray-600">
                 {[
                   "Integrity",
                   "Professionalism",
@@ -384,20 +406,19 @@ const About = () => {
           </div>
         </div>
       </section>
-
       {/* WHY CHOOSE US */}
-      <section className="py-24 px-6 md:px-12 bg-black">
+      <section className="py-24 px-6 md:px-12 bg-[#FAF8F3]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-[#D4AF37] font-semibold mb-3 uppercase tracking-[0.2em] text-sm">
               Why Choose Us
             </p>
 
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#111111] mb-4">
               Trusted Security Professionals
             </h2>
 
-            <p className="text-white/60 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Delivering dependable security services with professionalism,
               experience, and a commitment to protecting what matters most.
             </p>
@@ -409,7 +430,7 @@ const About = () => {
               return (
                 <div
                   key={index}
-                  className="bg-[#141414] border border-white/10 rounded-xl overflow-hidden hover:border-[#D4AF37]/50 hover:-translate-y-1 transition-all duration-300"
+                  className="bg-white border border-[#D4AF37]/20 rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:border-[#D4AF37]/50 hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="relative">
                     <img
@@ -417,17 +438,18 @@ const About = () => {
                       alt={item.title}
                       className="w-full h-48 object-cover"
                     />
-                    <span className="absolute top-4 left-4 bg-black/80 rounded-full p-2 shadow-md">
+
+                    <span className="absolute top-4 left-4 bg-white rounded-full p-2 shadow-md border border-[#D4AF37]/20">
                       <Icon className="w-5 h-5 text-[#D4AF37]" />
                     </span>
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-3">
+                    <h3 className="text-xl font-bold text-[#111111] mb-3">
                       {item.title}
                     </h3>
 
-                    <p className="text-white/60 leading-relaxed text-sm">
+                    <p className="text-gray-600 leading-relaxed text-sm">
                       {item.desc}
                     </p>
                   </div>
@@ -439,9 +461,9 @@ const About = () => {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="px-6 md:px-12 py-20 bg-[#0B0B0C]">
+      <section className="px-6 md:px-12 py-20 bg-[#FAF8F3]">
         <div className="max-w-6xl mx-auto">
-          <div className="relative bg-[#141414] border border-[#D4AF37]/20 rounded-[32px] shadow-2xl shadow-black/60 px-8 md:px-14 py-5 md:py-12 overflow-hidden">
+          <div className="relative bg-white border border-[#D4AF37]/20 rounded-[32px] shadow-xl px-8 md:px-14 py-5 md:py-12 overflow-hidden">
             <Quote className="absolute top-6 left-6 md:left-10 w-16 h-16 text-[#D4AF37]/15" />
 
             <div className="text-center mb-12">
@@ -449,7 +471,7 @@ const About = () => {
                 Testimonials
               </p>
 
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-white">
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#111111]">
                 What Our Clients Say
               </h2>
             </div>
@@ -473,20 +495,21 @@ const About = () => {
                         <Star
                           key={i}
                           size={18}
-                          className="fill-amber-400 text-amber-400"
+                          className="fill-[#D4AF37] text-[#D4AF37]"
                         />
                       ))}
                     </div>
 
-                    <p className="text-white/90 text-xl md:text-2xl leading-relaxed">
+                    <p className="text-gray-700 text-xl md:text-2xl leading-relaxed">
                       "{item.text}"
                     </p>
 
                     <div className="mt-8 flex flex-col items-center gap-3">
-                      <div className="w-14 h-14 rounded-full bg-black border border-[#D4AF37]/40 text-[#D4AF37] flex items-center justify-center font-bold text-lg shadow-md">
+                      <div className="w-14 h-14 rounded-full bg-[#FAF8F3] border border-[#D4AF37]/40 text-[#D4AF37] flex items-center justify-center font-bold text-lg shadow-md">
                         {getInitials(item.name)}
                       </div>
-                      <h4 className="text-white text-2xl font-semibold">
+
+                      <h4 className="text-[#111111] text-2xl font-semibold">
                         {item.name}
                       </h4>
                     </div>
@@ -499,69 +522,124 @@ const About = () => {
       </section>
 
       {/* INDUSTRIES WE SERVE */}
-      <section className="bg-black py-24 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-[#D4AF37] font-semibold mb-3 uppercase tracking-[0.2em] text-sm">
-              Industries We Protect
-            </p>
 
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
-              Security Solutions Tailored To Every Environment
+      <section className="relative py-24 px-6 md:px-12 bg-gradient-to-b from-[#FFFDF8] via-[#FAF8F3] to-[#F5F1E8] overflow-hidden">
+        {/* Background Blur */}
+
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#D4AF37]/10 blur-[140px] rounded-full"></div>
+
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#D4AF37]/10 blur-[120px] rounded-full"></div>
+
+        <div className="relative max-w-7xl mx-auto">
+          {/* Heading */}
+
+          <div className="text-center mb-16">
+            <span className="inline-flex items-center rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10 px-5 py-2 text-xs uppercase tracking-[0.25em] font-semibold text-[#D4AF37]">
+              Industries We Protect
+            </span>
+
+            <h2 className="mt-6 font-serif text-4xl md:text-5xl font-bold text-[#111] leading-tight">
+              Security Solutions Tailored
+              <span className="block text-[#D4AF37]">To Every Environment</span>
             </h2>
 
-            <p className="max-w-3xl mx-auto text-white/60 text-lg">
+            <p className="mt-6 max-w-3xl mx-auto text-lg leading-8 text-gray-600">
               From construction sites to corporate offices, we provide
               customized security services designed to protect people, assets,
               and operations.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Coverflow Slider */}
+
+          <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            centeredSlides={true}
+            loop={true}
+            slidesPerView={"auto"}
+            spaceBetween={25}
+            autoplay={{
+              delay: 3500,
+
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+
+              dynamicBullets: true,
+            }}
+            coverflowEffect={{
+              rotate: 0,
+
+              stretch: 0,
+
+              depth: 180,
+
+              modifier: 1.5,
+
+              scale: 0.9,
+
+              slideShadows: false,
+            }}
+            modules={[EffectCoverflow, Pagination, Autoplay]}
+            className="industrySwiper pb-16"
+          >
             {industries.map((item, index) => {
               const Icon = item.icon;
+
               return (
-                <div
-                  key={index}
-                  className="group bg-[#141414] border border-white/10 rounded-xl overflow-hidden hover:border-[#D4AF37]/50 transition duration-300"
-                >
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-64 object-cover group-hover:scale-105 transition duration-500"
-                    />
+                <SwiperSlide key={index} className="!w-[380px] md:!w-[420px]">
+                  <div className="group overflow-hidden rounded-[34px] bg-white border border-[#D4AF37]/15 shadow-xl hover:shadow-[0_25px_60px_rgba(212,175,55,0.18)] transition-all duration-500">
+                    {/* Image */}
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="h-[450px] w-full object-cover transition duration-700 group-hover:scale-110"
+                      />
 
-                    <span className="absolute top-4 left-4 bg-black/80 rounded-full p-2 shadow-md">
-                      <Icon className="w-5 h-5 text-[#D4AF37]" />
-                    </span>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-                    <h3 className="absolute bottom-4 left-5 text-white text-2xl font-bold">
-                      {item.title}
-                    </h3>
+                      {/* Icon */}
+
+                      <div className="absolute left-6 top-6 flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-xl">
+                        <Icon className="h-7 w-7 text-[#D4AF37]" />
+                      </div>
+
+                      {/* Title */}
+
+                      <div className="absolute bottom-8 left-7 right-7">
+                        <h3 className="text-3xl font-bold text-white leading-tight">
+                          {item.title}
+                        </h3>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+
+                    <div className="p-8">
+                      <p className="text-gray-600 leading-8 text-[15px]">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
-
-                  <div className="p-6">
-                    <p className="text-white/60 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
+                </SwiperSlide>
               );
             })}
-          </div>
+          </Swiper>
         </div>
       </section>
-
       {/* CTA */}
-      <section className="py-24 px-6 md:px-12 bg-[#0B0B0C]">
+      <section className="py-24 px-6 md:px-12 bg-[#FAF8F3]">
         <div className="max-w-5xl mx-auto">
-          <div className="bg-gradient-to-r from-[#D4AF37] to-[#8B6914] rounded-3xl shadow-2xl shadow-black/60 p-12 md:p-16 text-center">
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-black mb-6">
+          <div className="bg-white border border-[#D4AF37]/20 rounded-3xl shadow-xl p-12 md:p-16 text-center">
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#111111] mb-6">
               Need Professional Security Services?
             </h2>
 
-            <p className="text-black/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+            <p className="text-gray-600 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
               Get trained security professionals for your property. Reliable,
               fast, and trusted protection across Alberta.
             </p>
@@ -569,7 +647,7 @@ const About = () => {
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="flex items-center justify-center gap-2 px-8 py-4 bg-black text-[#D4AF37] font-semibold rounded-full shadow-md hover:bg-[#1A1A1A] transition"
+                className="flex items-center justify-center gap-2 px-8 py-4 bg-[#D4AF37] text-black font-semibold rounded-full shadow-md hover:bg-[#C89D22] transition-all duration-300"
               >
                 <ArrowRight className="w-5 h-5" />
                 Request a Free Quote
@@ -577,7 +655,7 @@ const About = () => {
 
               <a
                 href="tel:5876647683"
-                className="flex items-center justify-center gap-2 px-8 py-4 border border-black text-black font-semibold rounded-full hover:bg-black hover:text-[#D4AF37] transition"
+                className="flex items-center justify-center gap-2 px-8 py-4 border border-[#D4AF37] text-[#111111] font-semibold rounded-full hover:bg-[#D4AF37] hover:text-black transition-all duration-300"
               >
                 <Phone className="w-5 h-5" />
                 Call 587-664-7683
