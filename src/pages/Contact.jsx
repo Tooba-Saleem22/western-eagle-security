@@ -26,13 +26,16 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10 items-start">
           {/* Left */}
           <div className="lg:col-span-2">
-            <p className="flex items-center gap-2 text-[#005FCC] font-semibold uppercase tracking-wider mb-3">
+            <p className="flex items-center gap-2 text-[#D4AF37] font-semibold uppercase tracking-wider mb-3">
               <ShieldCheck className="w-5 h-5" />
               Contact Us
             </p>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-[#005FCC] mb-8">
-              Get in Touch With Western Eagle Security
+            <h1 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-8 leading-tight">
+              Get in Touch With
+              <span className="block text-[#D4AF37]">
+                Western Eagle Security
+              </span>
             </h1>
 
             <p className="text-gray-700 text-lg leading-8 mb-6">
@@ -41,48 +44,57 @@ const Contact = () => {
               provide a customized security solution across Alberta.
             </p>
 
-            <p className="text-gray-700 text-lg leading-8 mb-10">
+            <p className="text-gray-600 text-lg leading-8 mb-10">
               We are available 24/7 to discuss your security requirements and
               provide fast, reliable assistance.
             </p>
 
-            {/* IMAGE PLACEHOLDER: replace src below with a real photo of your guards/team */}
-            <div className="relative rounded-xl overflow-hidden shadow-lg h-64 md:h-72">
+            {/* IMAGE */}
+            <div className="relative rounded-2xl overflow-hidden border border-[#D4AF37]/20 shadow-2xl h-64 md:h-72">
               <img
-                src="https://placehold.co/1200x500/0A2540/FFFFFF?text=Add+Team+Photo+Here"
+                src="https://placehold.co/1200x500/D4AF37/FFFFFF?text=Add+Team+Photo+Here"
                 alt="Western Eagle Security guards on duty"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/70 via-transparent to-transparent" />
-              <p className="absolute bottom-4 left-5 text-white font-semibold text-lg">
+
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/75 via-transparent to-transparent" />
+
+              <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]" />
+
+              <p className="absolute bottom-5 left-6 text-white font-semibold text-lg">
                 Trusted security professionals, on duty across Alberta
               </p>
             </div>
           </div>
-
           {/* Right Card */}
-          <div className="bg-[#005FCC] rounded-xl p-8 md:p-10 text-white shadow-xl flex flex-col justify-center min-h-[340px]">
+          <div className="bg-[#D4AF37] rounded-xl p-8 md:p-10 text-white shadow-xl flex flex-col justify-center min-h-[340px]">
             <div className="flex items-center gap-3 mb-5">
-              <span className="bg-white/15 rounded-full p-2">
-                <PhoneCall className="w-5 h-5" />
+              <span className="bg-[#D4AF37]/15 rounded-full p-2">
+                <PhoneCall className="w-5 h-5 text-black" />
               </span>
-              <h3 className="text-2xl font-bold">Need Immediate Help?</h3>
+
+              <h3 className="text-2xl font-bold text-[#1A1A1A]">
+                Need Immediate Help?
+              </h3>
             </div>
 
-            <p className="text-white/90 mb-8 leading-7">
-              Call us now for urgent security support or quick consultation.
+            <p className="text-gray-700 mb-8 leading-7">
+              Call us now for urgent security support or a quick consultation.
             </p>
 
             <div className="mb-8 text-center">
-              <p className="text-white/80 text-sm uppercase tracking-wider">
+              <p className="text-gray-600 text-sm uppercase tracking-wider">
                 Call Anytime
               </p>
-              <h2 className="text-3xl font-bold mt-2">587-664-7683</h2>
+
+              <h2 className="text-3xl font-bold mt-2 text-[#1A1A1A]">
+                587-664-7683
+              </h2>
             </div>
 
             <a
               href="tel:5876647683"
-              className="flex items-center justify-center gap-2 bg-white text-[#005FCC] font-semibold py-3 px-6 rounded-full text-center hover:bg-gray-100 transition"
+              className="flex items-center justify-center gap-2 bg-[#D4AF37] text-[#1A1A1A] border border-black py-3 px-6 rounded-full font-semibold hover:bg-[#C89D2C] transition-all duration-300 shadow-lg"
             >
               <Phone className="w-4 h-4" />
               Call Now
@@ -95,42 +107,46 @@ const Contact = () => {
       <section className="py-24 px-6 md:px-12 bg-[#005FCC]/5">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
           {/* FORM */}
-          <div className="bg-white p-10 rounded-xl shadow-lg">
-            <h2 className="text-3xl font-bold text-[#005FCC] mb-8">
+          <div className="bg-white border border-[#D4AF37]/20 rounded-2xl p-10 shadow-[0_20px_50px_rgba(0,0,0,0.08)]">
+            <p className="uppercase tracking-[3px] text-sm font-semibold text-[#D4AF37] mb-2">
+              Get Started
+            </p>
+
+            <h2 className="text-3xl font-bold text-[#1A1A1A] mb-8">
               Request a Free Quote
             </h2>
 
             <form className="space-y-5">
               <div className="relative">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#D4AF37]" />
                 <input
                   type="text"
                   placeholder="Full Name"
-                  className="w-full border p-3 pl-11 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005FCC]"
+                  className="w-full bg-[#FAFAFA] border border-[#D4AF37]/20 p-3 pl-12 rounded-xl focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 transition"
                 />
               </div>
 
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#D4AF37]" />
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="w-full border p-3 pl-11 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005FCC]"
+                  className="w-full bg-[#FAFAFA] border border-[#D4AF37]/20 p-3 pl-12 rounded-xl focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 transition"
                 />
               </div>
 
               <div className="relative">
-                <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#D4AF37]" />
                 <input
                   type="text"
                   placeholder="Phone Number"
-                  className="w-full border p-3 pl-11 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005FCC]"
+                  className="w-full bg-[#FAFAFA] border border-[#D4AF37]/20 p-3 pl-12 rounded-xl focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 transition"
                 />
               </div>
 
               <div className="relative">
-                <ShieldCheck className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <select className="w-full border p-3 pl-11 pr-10 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-[#005FCC]">
+                <ShieldCheck className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#D4AF37]" />
+                <select className="w-full bg-[#FAFAFA] border border-[#D4AF37]/20 p-3 pl-12 pr-10 rounded-xl appearance-none focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 transition">
                   <option>Service Required</option>
                   <option>Static Security</option>
                   <option>Construction Security</option>
@@ -138,59 +154,59 @@ const Contact = () => {
                   <option>Mobile Patrol</option>
                   <option>Night Patrol</option>
                 </select>
-                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+
+                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#D4AF37] pointer-events-none" />
               </div>
 
               <div className="relative">
-                <MessageSquare className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
+                <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-[#D4AF37]" />
                 <textarea
                   rows="5"
                   placeholder="Your Message"
-                  className="w-full border p-3 pl-11 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005FCC]"
+                  className="w-full bg-[#FAFAFA] border border-[#D4AF37]/20 p-3 pl-12 rounded-xl focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 transition resize-none"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#005FCC] text-white py-3 rounded-lg font-semibold hover:bg-[#0047A3] transition"
+                className="w-full bg-[#D4AF37] text-[#1A1A1A] border border-black py-3.5 rounded-xl font-semibold hover:bg-[#C89D2C] transition-all duration-300 shadow-lg"
               >
                 Request Quote
               </button>
             </form>
           </div>
-
           {/* INFO */}
           <div className="space-y-8">
-            <div className="bg-[#005FCC] text-white p-10 rounded-xl shadow-lg">
+            <div className="bg-[#D4AF37] text-black p-10 rounded-xl shadow-lg">
               <h2 className="text-3xl font-bold mb-8">Contact Information</h2>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <span className="bg-white/15 rounded-full p-3 shrink-0">
+                  <span className="bg-black/15 rounded-full p-3 shrink-0">
                     <Phone className="w-5 h-5" />
                   </span>
                   <div>
-                    <p className="text-white/80">Phone</p>
+                    <p className="text-black/80">Phone</p>
                     <p className="text-xl font-semibold">587-664-7683</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <span className="bg-white/15 rounded-full p-3 shrink-0">
+                  <span className="bg-black/15 rounded-full p-3 shrink-0">
                     <MapPin className="w-5 h-5" />
                   </span>
                   <div>
-                    <p className="text-white/80">Location</p>
+                    <p className="text-black/80">Location</p>
                     <p className="text-xl font-semibold">Alberta, Canada</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <span className="bg-white/15 rounded-full p-3 shrink-0">
+                  <span className="bg-black/15 rounded-full p-3 shrink-0">
                     <Clock className="w-5 h-5" />
                   </span>
                   <div>
-                    <p className="text-white/80">Availability</p>
+                    <p className="text-black/80">Availability</p>
                     <p className="text-xl font-semibold">
                       24/7 Security Support
                     </p>
@@ -198,11 +214,11 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <span className="bg-white/15 rounded-full p-3 shrink-0">
+                  <span className="bg-black/15 rounded-full p-3 shrink-0">
                     <Mail className="w-5 h-5" />
                   </span>
                   <div>
-                    <p className="text-white/80">Email</p>
+                    <p className="text-black/80">Email</p>
                     <p className="text-xl font-semibold break-all">
                       info@westerneaglesecurity.ca
                     </p>
